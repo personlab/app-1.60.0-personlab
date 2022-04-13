@@ -88,8 +88,9 @@ print_r("<b>3.5 Сочетание условных операторов else и
 print_r($lineBrake);
 print_r($lineBrake);
 
+
 $new_messages_1 = $_POST;
-if (strcasecmp($_POST['logged_in_Three'], 'president@whitehouse.gov') === 0) {
+if (($_POST['logged_in_Three'], 'president@whitehouse.gov') === 0) {
 
 print_r("Welcome aboard, trusted user. $lineBrake");
 print 'это появляется только тогда когда истина if $logged_in_One is true.';
@@ -107,6 +108,37 @@ and there's no emergency.";
 print <<<_HTML_
 <form method="POST" action="$_SERVER[PHP_SELF]">
 Your Password: <input type="text" name="logged_in_Three" />
+<br/>
+<button type="submit">Say Go</button>
+</form>
+_HTML_;
+
+print_r($lineBrake);
+print_r($lineBrake);
+print_r("<b>test</b>");
+print_r($lineBrake);
+print_r($lineBrake);
+
+
+$new_messages_1 = $_POST;
+if ($_POST > 10  && $_POST < 19['logged_in_test']) {
+
+print_r("Welcome aboard, trusted user. $lineBrake");
+print 'это появляется только тогда когда истина if $logged_in_One is true.';
+} elseif ($new_messages_1) {
+// Следующая строка кода выполняется, если проверочное
+// условие $logged_in ложно, но проверочное условие
+// $new_messages истинно
+print "Dear stranger, there are new messages.";
+} else { // не работает
+// Следующая строка кода выполняется, если все проверочные
+// условия, $logged_in, $new_messages и $emergency, ложны
+print "I don't know you, you have no messages,
+and there's no emergency.";
+}
+print <<<_HTML_
+<form method="POST" action="$_SERVER[PHP_SELF]">
+Your Password: <input type="text" name="logged_in_test" />
 <br/>
 <button type="submit">Say Go</button>
 </form>
