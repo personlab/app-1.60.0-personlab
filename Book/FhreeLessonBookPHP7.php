@@ -446,7 +446,7 @@ print_r($lineBrake);
 $i = 1;
 print '<select name="people">';
 while ($i <= 10) {
-print "<option>\$i</option>\n";
+print "<option>$i</option>\n";
 $i++;
 }
 print_r("</select>");
@@ -462,7 +462,7 @@ print_r("<b>3.18. Вывод на экран списка, размечаемо�
 
 print_r('<select name = "people">');
 for ($i = 1; $i <= 10; $i++) {
-  print_r("<option>\$i</option>\n");
+  print_r("<option>$i</option>\n");
 }
 print_r("</select>");
 
@@ -473,8 +473,8 @@ print_r("<b>3.19. Применение нескольких выражений �
  print_r($lineBrake);
 
  print '<select name="doughnuts">';
- for ($min = 1, $max = 10; $min < 50; $min += 10, $max +=10) {
- print "<option>\$min - \$max</option>\n";
+ for ($min = 1, $max = 10; $min < 50; $min += 10, $max += 10) {
+ print "<option>$min - $max</option>\n";
  }
  print '</select>';
 
@@ -558,3 +558,18 @@ for() вместо конструкции цикла while().
 $c = ($f - 32) * (5/9);
 printf("%d degrees F = %d degrees C\n", $f, $c);
 }
+
+print_r($lineBrake);
+print_r($lineBrake);
+print_r("<b>Вариант 2. Видоизмените выполнение задания в упражнении 3, воспользовавшись конструкцией цикла
+for() вместо конструкции цикла while().
+</b>");
+ print_r($lineBrake);
+ print_r($lineBrake);
+
+print '<select name="degrees">';
+for ($f = -50; $f < 50; $f += 5) {
+  $c = ($f - 32) * (5/9);
+print "<option>$f degrees F = $c degrees C</option>\n";
+}
+print '</select>';
