@@ -95,7 +95,7 @@ print_r($lineBreak);
 
 
 $today_SW = date("D M j G:i:s T Y");
-$today_S = date("D M j G:i:s T Y");
+$today_S = date("H:i:s");
 /*$today_S >= 6 && $today_S <= 12;
 $today_S >= 12 && $today_S <= 18;
 $today_S >= 18 && $today_S <= 23;
@@ -106,7 +106,7 @@ switch ($today_S) {
       $str_1_2 = "Доброе утро, сегодня {$today_SW}";
       break;
       case $today_S >= 12 && $today_S <= 17:
-      $str_1_2 = "добрый день, сейчас {$today_SW}";
+      $str_1_2 = "Добрый день, сейчас {$today_SW}";
       break;
       case $today_S >= 18 && $today_S <= 23:
       $str_1_2 = "Добрый вечер, сейчас {$today_SW}";
@@ -288,3 +288,244 @@ function MaxNumber($numS) {                      // 346
 print_r(MaxNumber(345));
 print_r($lineBreak);
 print_r(MaxNumber(456));
+
+print_r($lineBreak);
+print_r($lineBreak);
+print_r("<b>Massive{$lineBreak}</b>");
+print_r($lineBreak);
+
+
+$arrayName = array(1, 2, 3, 4);
+$arrayName_1[] = 1;
+$arrayName_1[] = 2;
+$arrayName_1[] = 3;
+
+print_r($arrayName[0] . "<br>");
+print_r($arrayName_1[0] . "<br>");
+
+print_r($lineBreak);
+$arrayName_X = array('1' => 3, '2' => 5, '3' =>6, '4');
+$arrayName_2[1] = 3;
+$arrayName_2[2] = 5;
+$arrayName_2[3] = 6;
+
+print_r($arrayName_X[1] . "<br>");
+print_r($arrayName_2[1] . "<br>");
+
+print_r($lineBreak);
+$arrayName_S = array('Hello' => 3, 'World' => 5, '3' =>6, '4');
+$arrayName_3['Hello'] = 3;
+$arrayName_3[2] = "World";
+$arrayName_3[3] = 6;
+
+print_r($arrayName_S['Hello'] . "<br>");
+print_r($arrayName_3["Hello"] . "<br>");
+
+ // добавили слово вместо цифры
+print_r($lineBreak);
+$arrayName_S = array('Hello' => "hi", 'World' => 5, '3' =>6, '4');
+$arrayName_3['Hello'] = "hi";
+$arrayName_3[2] = "World";
+$arrayName_3[3] = 6;
+
+print_r($arrayName_S['Hello'] . "<br>");
+print_r($arrayName_3["Hello"] . "<br>");
+
+//       0123456 - hello h-0, e-1,...
+$privet ="Hello, World";
+print_r($privet[0] . "<br>");
+
+// у php мощнейший развитый аппарат по работе со строками
+
+print_r($lineBreak);
+print_r($lineBreak);
+print_r("<b>Циклы: от 1 до 10///{$lineBreak}</b>");
+print_r($lineBreak);
+
+function userOutPut() {
+  $i = 1;
+  print_r('<select name = "people">');
+  while($i <= 10) { // while - в переводе пока
+    print_r("<option>$i</option>\n");
+    $i++;
+  }
+  print_r("</select>");
+  return;
+
+}
+userOutPut();
+
+print_r($lineBreak);
+print_r($lineBreak);
+print_r("<b>Циклы: от 1 до 10{$lineBreak}</b>");
+print_r($lineBreak);
+// второй вывод
+function userOutPut_x() {
+  $i = 1;
+  while($i <= 10) {
+    print_r($i . "<br>");
+    $i++;
+  }
+  return;
+}
+userOutPut_x();
+
+
+// ошибка - зацикливание
+/*
+function userOutPut_xl() {
+  $i = 1;
+  //while($i > 0) {  // while (true) {}
+    print_r($i . "<br>");
+    $i++;
+  }
+  return;
+}
+//userOutPut_xl();
+*/
+
+print_r($lineBreak);
+print_r($lineBreak);
+print_r("<b>Цикл{$lineBreak}</b>");
+print_r($lineBreak);
+/*
+function sumOilTy($firs_1, $secon_1) {
+  //$i = $firs_1;
+  //$sumOil_1 = 0;
+  print '<select name="doughnuts">';
+  for ($i = $firs_1; $sumOil_1 = 0; $i <= $secon_1, $sumOil_1 = $sumOil_1 + $i, $i = $i + 1) {
+  //while($i <= $secon_1) {
+    //print_r($sumOil_1 . " + " . $i . "<br>");
+    print_r("<option>$firs_1 - $secon_1</option>\n");
+
+    //$sumOil_1 = $sumOil_1 + $i;
+    //$i = $i + 1;
+  }
+  print '</select>';
+  return $sumOil_1;
+}
+sumOilTy(3, 2);
+*/
+
+//print_r($lineBreak);
+//print_r($lineBreak);
+
+function sumOil($firstNumber_1, $secondNumber_1) {
+  $i = $firstNumber_1;
+  $sumOil = 0; // нейтральный элемент для сложения
+  while($i <= $secondNumber_1) {  //secondNumber_1 - firstNumber_1 + 1 = 7
+    print_r($sumOil . " + " . $i . "<br>");
+    $sumOil = $sumOil + $i;
+    $i = $i + 1;
+  }
+  return $sumOil;
+}
+print_r(sumOil(3, 9));
+
+print_r($lineBreak);
+print_r($lineBreak);
+print_r("<b>Поиск букв в слове{$lineBreak}</b>");
+print_r($lineBreak);
+
+$nameS = "Fanny"; // F - 0, a - 1, n - 2, n - 3, y - 4
+$nLinter = 0;
+$i = 0;
+while($i < strlen($nameS)) {  // предикат требует внимания со строками
+  if($nameS[$i] === "n") {
+    $nLinter = $nLinter + 1;
+  }
+  $i = $i + 1;
+}
+print_r("В имени {$nameS} ,букв 'n': {$nLinter}");
+
+print_r($lineBreak);
+print_r($lineBreak);
+print_r("<b>Поиск букв в слове c переворотом{$lineBreak}</b>");
+print_r($lineBreak);
+
+function strRevUser($str) {
+  $i = 0;
+  $newStr = "";
+  while($i < strlen($str)) { // предикат требует внимания со строками
+    $newStr = $newStr . $str[(strlen($str) - 1) - $i];  // 4 - 0 = 4
+    $num = (strlen($str) - 1) - $i;
+    print_r("Текущая строка " . $newStr .  ". Текущий номер симвода " . $num . "<br>" );
+    $i = $i + 1;
+  }
+  return $newStr;
+}
+print_r(strRevUser("Alex"));
+
+print_r($lineBreak);
+print_r($lineBreak);
+print_r("<b>выход из цикла{$lineBreak}</b>");
+print_r($lineBreak);
+
+function isPrime($num1) {
+  $div = 2;
+  while($div <= $num1/2) {
+    if($num1 % $div === 0) {
+      return false;
+    }
+    $div = $div + 1;
+  }
+  return true;
+}
+var_dump(isPrime(5));
+print_r($lineBreak);
+var_dump(isPrime(16));
+
+
+print_r($lineBreak);
+print_r($lineBreak);
+print_r("<b>простое число{$lineBreak}</b>");
+print_r($lineBreak);
+
+$div_5 = 2;
+$num_5 = 8;
+$result = "";
+while($div_5 <= $num_5/2) {
+  if($num_5 % $div_5 === 0) {
+    $result = "Не является простым!";
+    break;
+  }
+  $div_5 = $div_5 + 1;
+}
+print_r($result . "<br>");
+
+print_r($lineBreak);
+print_r($lineBreak);
+print_r("<b>функция for(strRevUser){$lineBreak}</b>");
+print_r($lineBreak);
+
+function strRevUserFor($str) {
+  $newStr = "";
+  for($i = 0; $i < strlen($str); $i++) { // for для
+    $let = $str[$i];
+    $newStr = "{$let}{$newStr}";
+  }
+  return $newStr;
+}
+print_r(strRevUserFor("Alex") . "<br>");
+
+print_r($lineBreak);
+print_r($lineBreak);
+print_r("<b>// i++ - инкремент (постфиксная форма)<br>
+// i-- - декремент (постфиксная формат)<br>
+// ++i - инкремент (префиксная форма)<br>
+// --i - декремент (префиксная форма){$lineBreak}</b>");
+print_r($lineBreak);
+// i++ - инкремент (постфиксная форма)
+// i-- - декремент (постфиксная формат)
+// ++i - инкремент (префиксная форма)
+// --i - декремент (префиксная форма)
+
+$i = 0;
+print_r($i++ . "<br>"); // 0 в этом варианте мы сначала получаем значение,
+print_r($i++ . "<br>"); // 1 а потом изменяем к единице
+print_r($i . "<br>");   // 2
+
+$i = 0;
+print_r(++$i . "<br>"); // 1  здесь мы сначала изменим значение, а потом
+print_r(++$i . "<br>"); // 2  его уже получим
+print_r($i . "<br>");   // 2
