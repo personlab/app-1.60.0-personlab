@@ -4,7 +4,7 @@ $lineBreak ="<br>";
 
 print <<<HTMLBLOCK
 <html>
-<head><title>ThreeLesson</title></head>
+<head><title>EightLesson</title></head>
 <body bgcolor="#fffed9">
 </body>
 </html>
@@ -304,6 +304,8 @@ print_r($arrayName[0] . "<br>");
 print_r($arrayName_1[0] . "<br>");
 
 print_r($lineBreak);
+print_r("<b>Massive 1{$lineBreak}</b>");
+print_r($lineBreak);
 $arrayName_X = array('1' => 3, '2' => 5, '3' =>6, '4');
 $arrayName_2[1] = 3;
 $arrayName_2[2] = 5;
@@ -313,6 +315,8 @@ print_r($arrayName_X[1] . "<br>");
 print_r($arrayName_2[1] . "<br>");
 
 print_r($lineBreak);
+print_r("<b>Massive 2{$lineBreak}</b>");
+print_r($lineBreak);
 $arrayName_S = array('Hello' => 3, 'World' => 5, '3' =>6, '4');
 $arrayName_3['Hello'] = 3;
 $arrayName_3[2] = "World";
@@ -321,8 +325,10 @@ $arrayName_3[3] = 6;
 print_r($arrayName_S['Hello'] . "<br>");
 print_r($arrayName_3["Hello"] . "<br>");
 
- // добавили слово вместо цифры
 print_r($lineBreak);
+print_r("<b>Massive{$lineBreak}</b>");
+print_r($lineBreak);
+ // добавили слово вместо цифры
 $arrayName_S = array('Hello' => "hi", 'World' => 5, '3' =>6, '4');
 $arrayName_3['Hello'] = "hi";
 $arrayName_3[2] = "World";
