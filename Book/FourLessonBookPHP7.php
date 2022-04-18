@@ -418,3 +418,298 @@ print "You ate a lot: ";
 }
 print 'You ate ' . $dishes_1['Beef Chow Foon']
 . ' dishes of Beef Chow Foon.';
+
+print_r($lineBrake);
+print_r($lineBrake);
+print_r("<b>4.19. Вставка элементов массива в символьные строки, заключаемые в двойные кавычки</b>");
+print_r($lineBrake);
+print_r($lineBrake);
+
+$meals_7['breakfast'] = 'Walnut Bun';
+$meals_7['lunch'] = 'Eggplant with Chili Sauce';
+$amounts_1 = array(3, 6, 8);
+print "For breakfast, I'd like $meals_7[breakfast]
+and for lunch<br>";                                   //здесь ищем по ключу слова
+print "I'd like $meals_7[lunch]. I want $amounts_1[0]
+at breakfast and ";                                //здесь по его порядковуму номеру
+print "$amounts_1[2] at lunch.";
+
+print_r($lineBrake);
+print_r($lineBrake);
+print_r("<b>4.20. Вставка элементов массива в символьные строки по ключам, заключаемым в
+фигурные скобки</b>");
+print_r($lineBrake);
+print_r($lineBrake);
+
+$meals_8['Walnut Bun'] = '$3.95';
+$hosts_1['www.example.com'] = 'website';
+print_r("A Walnut Bun costs {$meals_8['Walnut Bun']}<br>");
+print "www.example.com is a {$hosts_1['www.example.com']}.";
+
+/*Чтобы удалить элемент из массива, достаточно вызвать функцию unset():
+unset($dishes['Roast Duck']);*/
+
+print_r($lineBrake);
+print_r($lineBrake);
+print_r("<b>4.21. Формирование символьной строки из элементов массива с помощью функции
+implode() вывод всех строк из массива</b>");
+print_r($lineBrake);
+print_r($lineBrake);
+
+$dimsum = array('Chicken Bun', 'Stuffed Duck Web','Turnip Cake');
+$menu = implode(', ', $dimsum);
+print $menu;
+
+// implode()
+print_r($lineBrake);
+$letters = array('А','В','С' ,'D');
+print implode('', $letters);
+/*Чтобы вывести весь массив без разделения его элементов заданным ограничителем, достаточно
+указать пустую строку в качестве первого аргумента при вызове функции*/
+print_r($lineBrake);
+print_r($lineBrake);
+print_r("<b>4.22. Вывод строк HTML-таблицы на экран с помощью функции implode()</b>");
+print_r($lineBrake);
+print_r($lineBrake);
+
+print "<table border = '1' bordercolor = '#df0074'>";
+$dimsum = array('Chicken Bun','Stuffed Duck Web','Turnip Cake');
+print '<tr><td>' . implode ('</td><td>', $dimsum) . '</td></tr>';
+print_r("</table>");
+
+print_r($lineBrake);
+print_r($lineBrake);
+print_r("<b>4.23. Преобразование символьной строки в массив с помощью функции explode()</b>");
+print_r($lineBrake);
+print_r($lineBrake);
+
+$fish = 'Bass, Carp, Pike, Flounder';
+$fish_list = explode(', ', $fish);
+print "The second fish is $fish_list[2]";
+
+print_r($lineBrake);
+print_r($lineBrake);
+print_r("<b>4.24. Сортировка массива с помощью функции sort()</b>");
+print_r($lineBrake);
+print_r($lineBrake);
+
+$dinner = array('Sweet Corn and Asparagus',
+'Lemon Chicken',
+'Braised Bamboo Fungus');
+$meal = array('breakfast' => 'Walnut Bun',
+'lunch' => 'Cashew Nuts and White Mushrooms',
+'snack' => 'Dried Mulberries',
+'dinner' => 'Eggplant with Chili Sauce');
+print "Before Sorting:<br>";
+foreach ($dinner as $key => $value) {
+print " $dinner: $key $value <br>";
+}
+foreach ($meal as $key => $value) {
+print " $meal: $key $value<br>";
+}
+sort($dinner);
+sort($meal);
+
+print "After Sorting:<br>";
+foreach ($dinner as $key => $value) {
+print "$dinner: $key $value<br>";
+}
+foreach ($meal as $key => $value) {
+print "$meal: $key $value<br>";
+}
+
+print_r($lineBrake);
+print_r($lineBrake);
+print_r("<b>4.25. Сортировка массива с помощью функции asort()</b>");
+print_r($lineBrake);
+print_r($lineBrake);
+
+$meal = array('breakfast' => 'Walnut Bun',
+'lunch' => 'Cashew Nuts and White Mushrooms',
+'snack' => 'Dried Mulberries',
+'dinner' => 'Eggplant with Chili Sauce');
+print "Before Sorting/До<br>";
+foreach ($meal as $key => $value) {
+print " $meal: $key $value<br>";
+}
+asort($meal);
+print "After Sorting:<br>";  // по алфавитному порядку
+foreach ($meal as $key => $value) {
+print " $meal: $key $value<br>";
+}
+
+print_r($lineBrake);
+print_r($lineBrake);
+print_r("<b>4.26. Сортировка по ключам массива с помощью функции ksort()</b>");
+print_r($lineBrake);
+print_r($lineBrake);
+
+$meal = array('breakfast' => 'Walnut Bun',
+'lunch' => 'Cashew Nuts and White Mushrooms',
+'snack' => 'Dried Mulberries',
+'dinner' => 'Eggplant with Chili Sauce');
+print "Before Sorting:<br>";
+foreach ($meal as $key => $value) {
+print " $meal: $key $value<br>";
+}
+ksort($meal);
+print "After Sorting:<br>";  // в алфатном порядке
+foreach ($meal as $key => $value) {
+print " $meal: $key $value<br>";
+}
+
+/*
+У функций сортировки массивов sort(), asort() и ksort() имеются аналоги, сортирующие
+массивы по убывающей и соответственно называемые rsort(), arsort() и krsort(). Они действуют аналогично функциям sort(), asort() и ksort(), но сортируют массив таким образом,
+чтобы ключи или значения располагались в массиве по убывающей, начиная с самого большого (в алфавитном порядке) ключа или значения. В примере 4.27 показано применение функции
+arsort().
+*/
+print_r($lineBrake);
+print_r($lineBrake);
+print_r("<b>4.27. Сортировка массива с помощью функции arsort()</b>");
+print_r($lineBrake);
+print_r($lineBrake);
+
+$meal = array('breakfast' => 'Walnut Bun',
+'lunch' => 'Cashew Nuts and White Mushrooms',
+'snack' => 'Dried Mulberries',
+'dinner' => 'Eggplant with Chili Sauce');
+print "Before Sorting:<br>";
+foreach ($meal as $key => $value) {
+print "$meal: $key $value<br>";
+}
+arsort($meal);
+print "After Sorting:<br>";
+foreach ($meal as $key => $value) {
+print "$meal: $key $value<br>";
+}
+
+print_r($lineBrake);
+print_r($lineBrake);
+print_r("<b>4.28. Создание многомерных массивов с помощью языковой конструкции array() или
+сокращенного синтаксиса []</b>");
+print_r($lineBrake);
+print_r($lineBrake);
+
+$meals = array('breakfast' => ['Walnut Bun','Coffee'],
+'lunch' => ['Cashew Nuts', 'White Mushrooms'],
+'snack' => ['Dried Mulberries','Salted Sesame Crab']);
+$lunches = [ ['Chicken','Eggplant','Rice'],
+['Beef','Scallions','Noodles'],
+['Eggplant','Tofu'] ];
+$flavors = array('Japanese' => array('hot' => 'wasabi',
+'salty' => 'soy sauce'),
+'Chinese' => array('hot' => 'mustard',
+'pepper-salty' => 'prickly ash'));
+
+print $meals['lunch'][1]; // White Mushrooms (Белые грибы)
+print $meals['snack'][0]; // Dried Mulberries (Сушеная шелковица)
+print_r($lineBrake);
+print $lunches[0][0]; // Chicken (Цыпленок)
+print $lunches[2][1]; // Tofu (Соевый сыр)
+print_r($lineBrake);
+print $flavors['Japanese']['salty']; // soy sauce (соевый соус)
+print $flavors['Chinese']['hot']; // mustard (горчица)
+
+print_r($lineBrake);
+print_r($lineBrake);
+print_r("<b>4.29. Доступ к элементам многомерного массива</b><br>
+print meals['lunch'][1]; // White Mushrooms (Белые грибы)<br>
+print meals['snack'][0]; // Dried Mulberries (Сушеная шелковица)<br>
+print lunches[0][0]; // Chicken (Цыпленок)<br>
+print lunches[2][1]; // Tofu (Соевый сыр)<br>
+print flavors['Japanese']['salty']; // soy sauce (соевый соус)<br>
+print flavors['Chinese']['hot']; // mustard (горчица)");
+print_r($lineBrake);
+print_r($lineBrake);
+
+print_r($lineBrake);
+print_r($lineBrake);
+print_r("<b> 4.30. Манипулирование многомерными массивами</b>");
+print_r($lineBrake);
+print_r($lineBrake);
+
+$prices['dinner']['Sweet Corn and Asparagus'] = 12.50;
+$prices['lunch']['Cashew Nuts and White Mushrooms'] = 4.95;
+$prices['dinner']['Braised Bamboo Fungus'] = 8.95;
+$prices['dinner']['total'] =
+$prices['dinner']['Sweet Corn and Asparagus'] +
+$prices['dinner']['Braised Bamboo Fungus'];
+$specials[0][0] = 'Chestnut Bun';
+$specials[0][1] = 'Walnut Bun';
+$specials[0][2] = 'Peanut Bun';
+$specials[1][0] = 'Chestnut Salad';
+$specials[1][1] = 'Walnut Salad';
+// Если опустить индекс, новый элемент будет введен в конце массива.
+// В следующей строке кода создается элемент массива $specials[1][2]
+$specials[1][] = 'Peanut Salad';
+print_r($prices['dinner']['total']);
+print_r($lineBrake);
+print_r($specials[0][1]);
+
+print_r($lineBrake);
+print_r($lineBrake);
+print_r("<b>4.31. Перебор многомерного массива во вложенном цикле, организованном с помощью
+языковой конструкции foreach()</b>");
+print_r($lineBrake);
+print_r($lineBrake);
+
+$flavors = array('Japanese' => array('hot' => 'wasabi','salty' => 'soy sauce', 'Kyiv' => 'Izum'),
+'Chinese' => array('hot' => 'mustard','pepper-salty' => 'prickly ash'));
+// Переменная $culture содержит ключ, а переменная
+// $culture_flavors - значение (в данном случае — массив)
+foreach ($flavors as $culture => $culture_flavors) {
+// Переменная $flavor содержит ключ, а переменная
+// $example — значение
+foreach ($culture_flavors as $flavor => $example) {
+print "A $culture $flavor flavor is $example.<br>";
+}
+}
+
+print_r($lineBrake);
+print_r($lineBrake);
+print_r("<b>4.32. Перебор многомерного массива во вложенном цикле, организуемом с помощью языковой конструкции for()</b>");
+print_r($lineBrake);
+print_r($lineBrake);
+
+$specials = array( array('Chestnut Bun',
+'Walnut Bun',
+'Peanut Bun','\'Bun Bun Bun\''),
+array('Chestnut Salad',
+'Walnut Salad',
+'Peanut Salad') );
+// Переменная $num_specials содержит значение 2: количество
+// элементов в первой размерности массива $specials
+for ($i = 0, $num_specials = count($specials); $i < $num_specials;
+$i++) {
+// Переменная $num_sub содержит значение 3: количество
+// элементов в каждом подмассиве
+for ($m = 0, $num_sub = count($specials[$i]);
+$m < $num_sub; $m++) {
+print "Element [$i][$m] is " . $specials[$i][$m] . "<br>";
+}
+}
+
+print_r($lineBrake);
+print_r($lineBrake);
+print_r("<b>4.33. Вставка значения элемента многомерного массива</b>");
+print_r($lineBrake);
+print_r($lineBrake);
+
+$specials = array( array('Chestnut Bun',
+'Walnut Bun',
+'Peanut Bun'),
+array('Chestnut Salad',
+'Walnut Salad',
+'Peanut Salad','Салат \'Цезарь\'') );
+// Переменная $num_specials содержит значение 2: количество
+// элементов в первой размерности массива $specials
+for ($i = 0, $num_specials = count($specials);
+$i < $num_specials; $i++) {
+// Переменная $num_sub содержит значение 3: количество
+// элементов в каждом подмассиве
+for ($m = 0, $num_sub = count($specials[$i]);
+$m < $num_sub; $m++) {
+print "Element [$i][$m] is $specials[$i][$m]<br>";
+}
+}
