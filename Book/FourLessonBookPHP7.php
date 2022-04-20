@@ -889,7 +889,6 @@ $census = [ ['New York', 'NY', 8175133],
 ['San Diego', 'CA' , 1307402],
 ['Dallas', 'TX' , 1197816],
 ['San Jose', 'CA' , 945942] ];
-
 $total = 0;
 $state_totals = array();
 foreach ($census as $city_info) {
