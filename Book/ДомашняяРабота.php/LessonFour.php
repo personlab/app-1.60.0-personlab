@@ -33,8 +33,8 @@ $resheniye_zadaniya6 = "Возведите значение переменной
 $resheniye_zadaniya7 = "Найдите остаток от деления переменной на 3: " . $variable %= 3;
 
 $zadanie2 = "4. <b>Создайте 2 переменных и присвойте им значения 50 и 70
-соответственно</b><br>Cоздайте переменную $ pupil и присвойте ей строку с
-именем первой переменной. Выведите на экран $$ pupil}. Создайте еще одну
+соответственно</b><br><br>Cоздайте переменную $ pupil и присвойте ей строку с
+именем первой переменной. Выведите на экран $$ pupil}.<br>Создайте еще одну
 переменную $ student и присвойте ей строку с именем второй переменной.
 Выведите на экран $$ student}.<br><br>";
 $resheniye_zadaniya8 = 50;
@@ -46,7 +46,7 @@ $student = "resheniye_zadaniya9";
 //$resheniye_zadaniya3 = 60 * 60 * 24;
 print <<<HTMLBLOCK
 <html>
-<head><title>FourTwuo HomeWork</title></head>
+<head><title>LessonFour HomeWork</title></head>
 <body bgcolor="#fffed9">
 
 
