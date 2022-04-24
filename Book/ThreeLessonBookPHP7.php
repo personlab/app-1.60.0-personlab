@@ -41,12 +41,12 @@ print_r($lineBrake);
 
 if (strcasecmp($_POST['logged_in_One'], 'president@whitehouse.gov') === 0) {
 
-print_r("Welcome aboard, trusted user. $lineBrake");
+print_r("Добро пожаловать на борт, доверенный пользователь. $lineBrake");
 print 'это появляется только тогда когда истина if $logged_in_One is true.';
 //print_r(substr($_POST['logged_in'], 0, 8));
 
 } else {
-print_r("Howdy, stranger.");
+print_r("Привет, незнакомец.");
 print <<<_HTML_
 <form method="POST" action="$_SERVER[PHP_SELF]">
 Your Password: <input type="text" name="logged_in_One" />
@@ -98,12 +98,12 @@ print 'это появляется только тогда когда истин
 // Следующая строка кода выполняется, если проверочное
 // условие $logged_in ложно, но проверочное условие
 // $new_messages истинно
-print "Dear stranger, there are new messages.";
+print "Дорогой незнакомец, есть новые сообщения.";
 } else { // не работает
 // Следующая строка кода выполняется, если все проверочные
 // условия, $logged_in, $new_messages и $emergency, ложны
-print "I don't know you, you have no messages,
-and there's no emergency.";
+print "Я тебя не знаю, у тебя нет сообщений,
+и нет никакой чрезвычайной ситуации.";
 }
 print <<<_HTML_
 <form method="POST" action="$_SERVER[PHP_SELF]">
