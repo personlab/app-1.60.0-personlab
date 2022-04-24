@@ -8,16 +8,16 @@ $today_S = date("H:i:s");
 
 switch ($today_S) {
       case $today_S >= 6 && $today_S <= 11:
-      $str_1_2 = "<b>Доброе утро, сегодня {$today_SW}</b";
+      $str_1_2 = "<b>Доброе утро, сегодня {$today_SW}</b>";
       break;
       case $today_S >= 12 && $today_S <= 17:
-      $str_1_2 = "<b>Добрый день, сегодня {$today_SW}</b";
+      $str_1_2 = "<b>Добрый день, сегодня {$today_SW}</b>";
       break;
       case $today_S >= 18 && $today_S <= 23:
-      $str_1_2 = "<b>Добрый вечер, сегодня {$today_SW}</b";
+      $str_1_2 = "<b>Добрый вечер, сегодня {$today_SW}</b>";
       break;
       case $today_S >= 00 && $today_S <= 5:
-      $str_1_2 = "<b>Доброй ночи, сегодня {$today_SW}</b";
+      $str_1_2 = "<b>Доброй ночи, сегодня {$today_SW}</b>";
       break;
 }
 
@@ -47,7 +47,7 @@ $student = "resheniye_zadaniya9";
 print <<<HTMLBLOCK
 <html>
 <head><title>LessonFour HomeWork</title></head>
-<body bgcolor="#fffed9">
+<body bgcolor="#292a2e">
 
 
 <table width = "100%" height = "100%">
@@ -55,8 +55,11 @@ print <<<HTMLBLOCK
     <td valign = "top" style="color: red">$lovePHP</td>
   </tr>
   <tr>
-    <td valign = "top" width = "80%" height = "80%" align = "center">
-    {$homeWork}<br>{$zadanie1}{$resheniye_zadaniya1}{$resheniye_zadaniya2}<br>
+    <td valign = "top" align = "center" style="color: #89b4f8">{$homeWork}</td>
+  </tr>
+  <tr>
+    <td valign = "top" width = "80%" height = "80%" align = "center" style="color: #babbbf">
+    {$zadanie1}{$resheniye_zadaniya1}{$resheniye_zadaniya2}<br>
     {$resheniye_zadaniya3}<br>{$resheniye_zadaniya4}<br>{$resheniye_zadaniya5}<br>
     {$resheniye_zadaniya6}<br>{$resheniye_zadaniya7}<br><br>$zadanie2<br>
     В нашей компании ${$student} студентов уже развивают более ${$pupil} высокотехнологичных
@@ -64,7 +67,7 @@ print <<<HTMLBLOCK
 
   </tr>
   <tr>
-    <td valign = "bottom" style="color: #73094b">$str_1_2</td>
+    <td valign = "bottom" style="color: #89b4f8">$str_1_2</td>
   </tr>
 </table>
 </body>
