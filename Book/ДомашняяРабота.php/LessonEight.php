@@ -174,8 +174,6 @@ function greetings($language, $name) {
    }
 }
 
-
-
 $funcName = "greetings";
 //$funcName($language, $name);
 print_r($lineBrake);
