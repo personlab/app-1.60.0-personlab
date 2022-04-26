@@ -22,6 +22,7 @@ switch ($today_S) {
 }
 
 //функция призывного возраста
+$age = ($_POST['age']);
 function typeOfAge($age) {
   if ($age > 18  && $age < 28) {
     return "Возраст $age является призывным.";
@@ -90,7 +91,10 @@ print <<<HTMLBLOCK
   </tr>
   <tr>
     <td valign = "top" width = "80%" height = "80%" align = "center" style="color: #babbbf">
-    {$zadanie1}<br>{$func(13)}<br>{$func(21)}<br><br>{$zadanie2}<br>{$funct(35, 35)}<br>{$funct(33, 33)}<br>
+    {$zadanie1}<br><form method="POST" action="$_SERVER[PHP_SELF]">
+    <font color = "#89b4f8">Введите введите число: </font><input type="text" name="age" />
+    <button type="submit">Say Go</button>
+    </form><br>{$func(21)}<br><br>{$zadanie2}<br>{$funct(35, 35)}<br>{$funct(33, 33)}<br>
     <br>{$zadanie3}<br>{$fun(-1, 1)}<br><br>{$zadanie4}<br>{$functi(1, 4)}<br>{$functi(1, 7)}</td>
   </tr>
   <tr>
