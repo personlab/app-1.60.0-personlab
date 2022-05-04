@@ -1,2 +1,2 @@
-echo ("1+2");
-echo "";
+echo ("123");
+print_r("my love");
