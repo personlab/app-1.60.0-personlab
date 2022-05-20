@@ -160,7 +160,7 @@ for ($i=1; $i <=25; $i++) {
 }
 print_r("</select>");
 
-$language = (isset($_POST['language'])) ? $_POST['language'] : null;
+/*$language = (isset($_POST['language'])) ? $_POST['language'] : null;
 $name = ($_POST['name']);
 function greetings($language, $name) {
   if ($language === 'ru') {
@@ -174,8 +174,8 @@ function greetings($language, $name) {
    }
 }
 
-$funcName = "greetings";
-$funcName($language, $name);
+$funcName = "greetings";*/
+//$funcName($language, $name);
 print_r($lineBrake);
 print_r($lineBrake);
 
@@ -192,12 +192,45 @@ echo '<table width = "100%" height = "100%">';
 
   <form method='POST' action='$_SERVER[PHP_SELF]'>
   <font color = '#89b4f8'>Введите Имя: </font><input type='text' name='name' />
-  <button type='submit'>Say Go</button><br><br>{$funcName} </td>";
+  <button type='submit'>Say Go</button><br><br>{$funcName($language, $name)} </td>";
   echo '</tr>';
 
 echo '</table>';
 print_r($lineBrake);
 print_r($lineBrake);
+
+$row_styles = array('even','odd');
+$style_index = 0;
+$my_class = $row_styles[$style_index];
+$meal = array('ru' => 'Приветсвие на Русском языке: <b style="color: #89b4f8">Привет $name</b>',
+              'en' => 'Greeting in English: <b style="color: #ff4020">Hello $name</b>',
+              'fr' => 'Salutation en Français: <b style="color: #a80397">Salut $name</b>',
+              'it' => 'Saluto in Italiano: <b style="color: #1ab394">Сiao $name</b>');
+      print_r("<select>");
+      foreach ($meal as $key) {
+          print_r("<tr class='" . $row_styles[$style_index] . "'>");
+          print_r("<option>$key</option>\n");
+          // Смена значения переменной $style_index с 0 на 1, и обратно
+          $style_index = 1 - $style_index;
+      }
+      print_r("</select>");
+
+$language = (isset($_POST['language'])) ? $_POST['language'] : null;
+$name = ($_POST['name']);
+
+function greetings($language, $name) {
+  if ($language === 'ru') {
+     return "Приветсвие на Русском языке: <b style='color: #89b4f8'>Привет $name</b>";
+   } elseif ($language === 'en') {
+     return "Greeting in English: <b style='color: #ff4020'>Hello $name</b>";
+   } elseif ($language === 'fr') {
+     return "Salutation en Français: <b style='color: #a80397'>Salut $name</b>";
+   } elseif ($language === 'it') {
+     return "Saluto in Italiano: <b style='color: #1ab394'>Сiao $name</b>";
+   }
+}
+
+$funcName = "greetings";
 
     ?>
       <td valign = "bottom" style="color: #89b4f8"></td>
