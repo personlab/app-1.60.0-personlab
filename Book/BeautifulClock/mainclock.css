@@ -1,0 +1,78 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+#time {
+  display: flex;
+  gap: 1px;
+  color: #fff;
+}
+#time .circle {
+  position: relative;
+  width: 50px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#time .circle svg {
+  position: relative;
+  width: 50px;
+  height: 159px;
+  transform: rotate(271deg);
+}
+#time .circle svg circle {
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke: #191919;
+  stroke-width: 1;
+  transform: translate(5px, 5px);
+}
+#time .circle svg circle:nth-child(2) {
+  stroke: var(--clr);
+  stroke-dasharray: 129;
+
+  }
+#time div {
+  position: absolute;
+  text-align: center;
+  font-weight: 10;
+  font-size: 0.9em;
+}
+/*#time div span {
+  position: absolute;
+  transform: translateX(-50%) translateY(20px);
+  font-size: 0.50em;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}*/
+#time .ap {
+  position: relative;
+  font-size: : 0.5em;
+  transform: translateX(4px);
+}
+.dots {
+  position: absolute;
+  width: 50px;
+  height: 49px;
+  z-index: 10;
+  justify-content: center;
+}
+.dots::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  width: 3px;
+  height: 3px;
+  background: var(--clr);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--clr),
+  0 0 60px var(--clr);
+
+}

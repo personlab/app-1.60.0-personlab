@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="swiper-bundle.min.css">
+  <link rel="stylesheet" href="bottonmain.css">
+  <link rel="stylesheet" href="bottoncss.css">
+  <link rel="stylesheet" href="mainclock.css">
+  <title>Slider™</title>
+</head>
+<body>
+
+  <div class="description">
+    <div id="time">
+     <div class="circle" style="--clr: #ff2972">
+       <div class="dots hr_dot"></div>
+       <svg>
+         <circle cx="20" cy="74" r="20"></circle>
+         <circle cx="20" cy="74" r="20" id="hh"></circle>
+       </svg>
+       <div id="hours">00</div>
+    </div>
+    <div class="circle"  style="--clr: #fee800">
+      <div class="dots min_dot"></div>
+      <svg>
+        <circle cx="20" cy="74" r="20"></circle>
+        <circle cx="20" cy="74" r="20" id="mm"></circle>
+      </svg>
+      <div id="minutes">00</div>
+    </div>
+    <div class="circle"  style="--clr: #04fc43">
+      <div class="dots sec_dot"></div>
+      <svg>
+        <circle cx="20" cy="74" r="20"></circle>
+        <circle cx="20" cy="74" r="20" id="ss"></circle>
+      </svg>
+      <div id="seconds">00</div>
+    </div>
+    <div class="ap">
+      <div id="ampm">AM</div>
+      </div>
+    </div>
+
+    <script>
+    setInterval(() =>{
+      let hours = document.getElementById('hours');
+      let minutes = document.getElementById('minutes');
+      let seconds = document.getElementById('seconds');
+      let ampm = document.getElementById('ampm');
+
+      let hh = document.getElementById('hh');
+      let mm = document.getElementById('mm');
+      let ss = document.getElementById('ss');
+
+      let hr_dot = document.querySelector('.hr_dot');
+      let min_dot = document.querySelector('.min_dot');
+      let sec_dot = document.querySelector('.sec_dot');
+
+      let h = new Date().getHours();
+      let m = new Date().getMinutes();
+      let s = new Date().getSeconds();
+      let am = h >= 12 ? "PM" : "AM";
+
+      //convert 24hr clock to 12hr Clock
+      if (h > 12){
+        h = h - 12;
+      }
+
+      //подставляем ноль к числу
+      h = (h < 10) ? "0" + h : h;
+      m = (m < 10) ? "0" + m : m;
+      s = (s < 10) ? "0" + s : s;
+
+      hours.innerHTML = h + "<br><span></span>";
+      minutes.innerHTML = m + "<br><span></span>";;
+      seconds.innerHTML = s + "<br><span></span>";;
+      ampm.innerHTML = am;
+
+      hh.style.strokeDashoffset = 130 - (130 * h) / 12;
+      // заполнение круга  часы
+      mm.style.strokeDashoffset = 130 - (130 * m) / 60;
+     // минуты
+      ss.style.strokeDashoffset = 130 - (130 * s) / 60;
+     // секунды
+
+      hr_dot.style.transform = `rotate(${h * 30}deg)`;
+      //360 / 12 = 30
+      min_dot.style.transform = `rotate(${m * 6}deg)`;
+      //360 / 60 = 6
+      sec_dot.style.transform = `rotate(${s * 6}deg)`;
+
+      })
+    </script>
+    <div class="logo">ShopMaster™</div>
+    <p>
+      Добро пожаловать в магазин любимых брендов!
+      </p>
+
+
+
+  </div>
+  <a href="#" style="--clr: #ff22bb;--i:0"><span>Button</span></a>
+  <a href="#" style="--clr: #00ccff;--i:1"><span>Button</span></a>
+
+
+  <div class="swiper slider slider_main">
+    <div class="swiper-wrapper slier__wrapper">
+
+      <div class="swiper-slide slider__item">
+        <div class="slider__img" data-swiper-parallax="20%" style="background-image: url(images/1.jpg);"></div>
+      </div>
+      <div class="swiper-slide slider__item">
+        <div class="slider__img" data-swiper-parallax="30%" style="background-image: url(images/2.jpg);"></div>
+      </div>
+      <div class="swiper-slide slider__item">
+        <div class="slider__img" data-swiper-parallax="20%" style="background-image: url(images/3.jpg);"></div>
+      </div>
+      <div class="swiper-slide slider__item">
+        <div class="slider__img" data-swiper-parallax="30%" style="background-image: url(images/4.jpg);"></div>
+      </div>
+      <div class="swiper-slide slider__item">
+        <div class="slider__img" data-swiper-parallax="20%" style="background-image: url(images/5.jpg);"></div>
+      </div>
+      <div class="swiper-slide slider__item">
+        <div class="slider__img" data-swiper-parallax="30%" style="background-image: url(images/6.jpg);"></div>
+      </div>
+      <div class="swiper-slide slider__item">
+        <div class="slider__img" data-swiper-parallax="20%" style="background-image: url(images/7.jpg);"></div>
+      </div>
+      <div class="swiper-slide slider__item">
+        <div class="slider__img" data-swiper-parallax="30%" style="background-image: url(images/8.jpg);"></div>
+      </div>
+      <div class="swiper-slide slider__item">
+        <div class="slider__img" data-swiper-parallax="20%" style="background-image: url(images/9.jpg);"></div>
+      </div>
+
+    </div>
+  </div>
+
+      <div class="swiper slider slider_bg">
+        <div class="swiper-wrapper slier__wrapper">
+
+          <div class="swiper-slide slider__item">
+            <div class="slider__img" data-swiper-parallax="20%" style="background-image: url(images/1.jpg);"></div>
+          </div>
+          <div class="swiper-slide slider__item">
+            <div class="slider__img" data-swiper-parallax="30%" style="background-image: url(images/2.jpg);"></div>
+          </div>
+          <div class="swiper-slide slider__item">
+            <div class="slider__img" data-swiper-parallax="20%" style="background-image: url(images/3.jpg);"></div>
+          </div>
+          <div class="swiper-slide slider__item">
+            <div class="slider__img" data-swiper-parallax="30%" style="background-image: url(images/4.jpg);"></div>
+          </div>
+          <div class="swiper-slide slider__item">
+            <div class="slider__img" data-swiper-parallax="20%" style="background-image: url(images/5.jpg);"></div>
+          </div>
+          <div class="swiper-slide slider__item">
+            <div class="slider__img" data-swiper-parallax="30%" style="background-image: url(images/6.jpg);"></div>
+          </div>
+          <div class="swiper-slide slider__item">
+            <div class="slider__img" data-swiper-parallax="20%" style="background-image: url(images/7.jpg);"></div>
+          </div>
+          <div class="swiper-slide slider__item">
+            <div class="slider__img" data-swiper-parallax="30%" style="background-image: url(images/8.jpg);"></div>
+          </div>
+          <div class="swiper-slide slider__item">
+            <div class="slider__img" data-swiper-parallax="20%" style="background-image: url(images/9.jpg);"></div>
+          </div>
+
+    </div>
+  </div>
+
+  <script src="swiper-bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
