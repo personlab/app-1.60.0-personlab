@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="3DCard.css">
+  <title>Javascript Mousemove 3D Parallax Tilt Effect using Vanilla tilt.js | 3D Tilt Hover Effects</title>
+</head>
+<body>
+  <div class="container3DCard">
+    <div class="box3DCard">
+      <div class="imgBX3DCard">
+        <img src="sports-girl_fit_1.jpg" alt="">
+      </div>
+      <div class="contentBX3DCard">
+        <h2>Title box hover Effect</h2>
+        <p>✓ Снижение веса на 5 – 8 кг (возможно до 12 кг)
+        ✓ Увеличение тонуса мышц и легкость движений
+        ✓ Уверенность в себе, подкрепляемое комплиментами и интересом со стороны противоположного пола
+        ✓ Укрепление семейных отношений вследствие увеличения вашей привлекательности и повышения либидо
+        ✓ Нормализация показателей здоровья, укрепление иммунитета</p>
+      </div>
+    </div>
+    <div class="box3DCard">
+      <div class="imgBX3DCard">
+        <img src="sports-girl_fit.jpg" alt="">
+      </div>
+      <div class="contentBX3DCard">
+        <h2>Title box hover Effect</h2>
+        <p>✓ Снижение веса на 5 – 8 кг (возможно до 12 кг)
+        ✓ Увеличение тонуса мышц и легкость движений
+        ✓ Уверенность в себе, подкрепляемое комплиментами и интересом со стороны противоположного пола
+        ✓ Укрепление семейных отношений вследствие увеличения вашей привлекательности и повышения либидо
+        ✓ Нормализация показателей здоровья, укрепление иммунитета</p>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="vanilla-tilt.js"></script>
+  <script type="text/javascript">
+    	VanillaTilt.init(document.querySelectorAll(".box3DCard"), {
+    		max: 25,
+    		speed: 400
+    	});
+
+</script>
+</body>
+</html>

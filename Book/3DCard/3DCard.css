@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.container3DCard {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 0;
+  transform-style: preserve-3d;
+}
+.container3DCard .box3DCard {
+  position: relative;
+  width: 500px;
+  height: 300px;
+  margin: 60px 0;
+  background: #000;
+  background: #000;
+  transform-style: preserve-3d;
+}
+.container3DCard .box3DCard:hover {
+  box-shadow: 0 50px 80px rgba(0, 0, 0, .1);
+}
+.container3DCard .box3DCard .imgBX3DCard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.container3DCard .box3DCard .contentBX3DCard {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  right: 50px;
+  background: #fff;
+  transform: translateZ(20px) scale(0);
+  padding: 40px 25px;
+  transform-origin: top;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+}
+.container3DCard .box3DCard:hover .contentBX3DCard {
+  transform: translateZ(50px) scale(1);
+}
