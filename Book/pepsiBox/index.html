@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="pepsiBox.css">
+  <title>Pepsi Box</title>
+</head>
+<body>
+  <section class="sec">
+    <header>
+    <a href="#"><img src="logo.png" class="logo"></a>
+    <div class="toggleMenu" onclick="menuToggle();"></div>
+    <ul class="navigation">
+      <li><a href="#">Главная</a></li>
+      <li><a href="#">Продукт</a></li>
+      <li><a href="#">Что нового</a></li>
+      <li><a href="#">Новости</a></li>
+      <li><a href="#">Контакты</a></li>
+    </ul>
+   </header>
+   <div class="contentPepsiBox">
+     <div class="textBoxPepsiBox">
+       <h2>Than's What<br><span>I like</span></h2>
+       <p>Мы предлагаем:
+       ✓ эффективные и короткие домашние видео-тренировки на ВСЕ группы мышц
+       ✓ Вкуснейшее меню на каждый день (никакой экзотики)
+       ✓ Консультация врача – реабилитолога, поддержка, мотивация
+       ✓ Доступ к материалу остается НАВСЕГДА
+         </p>
+         <a href="#">View All Product</a>
+     </div>
+     <div class="imgBoxPepsiBox">
+       <img src="pepsi001.png" class="pepsi">
+     </div>
+   </div>
+   <ul class="thumb">
+     <li><img src="pepsi001.png" onclick="imgSlider('pepsi001.png');changeBgColor('#0062be')"></li>
+     <li><img src="pepsi002.png" onclick="imgSlider('pepsi002.png');changeBgColor('#e60c2c')"></li>
+     <li><img src="pepsi003.png" onclick="imgSlider('pepsi003.png');changeBgColor('#1e1e1e')"></li>
+   </ul>
+   <ul class="sci">
+     <li><a href="#"><img src="facebook.png"></a></li>
+     <li><a href="#"><img src="twitter.png"></a></li>
+     <li><a href="#"><img src="instagram.png"></a></li>
+   </ul>
+  </section>
+  <script type="text/javascript">
+    function imgSlider(anything) {
+      document.querySelector('.pepsi').src = anything;
+    }
+    function changeBgColor(color) {
+      const sec = document.querySelector('.sec');
+      sec.style.background = color;
+    }
+    function menuToggle() {
+      const toggleMenu = document.querySelector('.toggleMenu');
+      const navigation = document.querySelector('.navigation');
+      toggleMenu.classList.toggle('active');
+      navigation.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
