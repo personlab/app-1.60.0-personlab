@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="WhiteThemeProduct.css">
+  <title>Product</title>
+</head>
+<body>
+   <header>
+         <a href="https://shopmaster.info/" class="logo" data-text="FitnessClub">FitnessClub</a>
+     <div class="righSide">
+       <div class="btns dayNight">
+         <ion-icon name="moon-outline"></ion-icon>
+         <ion-icon name="sunny-outline"></ion-icon>
+       </div>
+       <div class="btns menuToggle">
+         <ion-icon name="menu-outline"></ion-icon>
+         <ion-icon name="close-outline"></ion-icon>
+       </div>
+     </div>
+   </header>
+
+
+
+   <section class="main">
+       <img src="fitness_32.png" class="fitBg">
+
+   <div class="content">
+
+         <h2>
+         <span>О</span>
+         <span>г</span>
+         <span>н</span>
+         <span>е</span>
+         <span>н</span>
+         <span>н</span>
+         <span>а</span>
+         <span>я&nbsp&nbsp</span>
+         <span>т</span>
+         <span>р</span>
+         <span>е</span>
+         <span>н</span>
+         <span>и</span>
+         <span>р</span>
+         <span>о</span>
+         <span>в</span>
+         <span>к</span>
+         <span>а</span>
+       </h2>
+         <h3 data-text="для привлекательных форм">
+           <span>д</span>
+           <span>л</span>
+           <span>я</span><br>
+           <span>п</span>
+           <span>р</span>
+           <span>и</span>
+           <span>в</span>
+           <span>л</span>
+           <span>е</span>
+           <span>к</span>
+           <span>а</span>
+           <span>т</span>
+           <span>е</span>
+           <span>л</span>
+           <span>ь</span>
+           <span>н</span>
+           <span>ы</span>
+           <span>х&nbsp&nbsp</span>
+           <span>ф</span>
+           <span>о</span>
+           <span>р</span>
+           <span>м</span>
+         </h3>
+
+               <div class="cardFit">
+                <div class="circleFit" style="--clr:rgb(0 0 0 / 50%);">
+                  <img src="ClubFit3.png" class="logoFit">
+                   </div>
+                    <div class="contentFit">
+                     <h3>Мы предлагаем:</h3>
+                     <p>✓ эффективные и короткие домашние видео-тренировки на ВСЕ группы мышц</p>
+                     <p>✓ Вкуснейшее меню на каждый день (никакой экзотики)</p>
+                     <p>✓ Консультация врача – реабилитолога, поддержка, мотивация</p>
+                     <p>✓ Доступ к материалу остается НАВСЕГДА</p>
+                     <br>
+                     <a href="#mainWTP" style="--clr: #ff22bb;--i:0" class="btnWTP">
+                       <!--<span>Button</span>-->
+                       <span></span>
+                       <span></span>
+                       <span></span>
+                       <span></span>
+                       Узнать больше
+                     </a>
+                       <!-- <a href="#about" class="btn">
+                       <span></span>
+                       <span></span>
+                       <span></span>
+                       <span></span>
+                       Узнать больше
+                     </a>-->
+
+                     <div id="time">
+                      <div class="circle" style="--clr: #ff2972">
+                        <div class="dots hr_dot"></div>
+                        <svg>
+                          <circle cx="20" cy="74" r="20"></circle>
+                          <circle cx="20" cy="74" r="20" id="hh"></circle>
+                        </svg>
+                        <div id="hours">00</div>
+                     </div>
+                     <div class="circle"  style="--clr: #fee800">
+                       <div class="dots min_dot"></div>
+                       <svg>
+                         <circle cx="20" cy="74" r="20"></circle>
+                         <circle cx="20" cy="74" r="20" id="mm"></circle>
+                       </svg>
+                       <div id="minutes">00</div>
+                     </div>
+                     <div class="circle"  style="--clr: #04fc43">
+                       <div class="dots sec_dot"></div>
+                       <svg>
+                         <circle cx="20" cy="74" r="20"></circle>
+                         <circle cx="20" cy="74" r="20" id="ss"></circle>
+                       </svg>
+                       <div id="seconds">00</div>
+                     </div>
+                     <div class="ap">
+                       <div id="ampm">AM</div>
+                       </div>
+                     </div>
+
+                     <script>
+                     setInterval(() =>{
+                       let hours = document.getElementById('hours');
+                       let minutes = document.getElementById('minutes');
+                       let seconds = document.getElementById('seconds');
+                       let ampm = document.getElementById('ampm');
+
+                       let hh = document.getElementById('hh');
+                       let mm = document.getElementById('mm');
+                       let ss = document.getElementById('ss');
+
+                       let hr_dot = document.querySelector('.hr_dot');
+                       let min_dot = document.querySelector('.min_dot');
+                       let sec_dot = document.querySelector('.sec_dot');
+
+                       let h = new Date().getHours();
+                       let m = new Date().getMinutes();
+                       let s = new Date().getSeconds();
+                       let am = h >= 12 ? "PM" : "AM";
+
+                       //convert 24hr clock to 12hr Clock
+                       if (h > 12){
+                         h = h - 12;
+                       }
+
+                       //подставляем ноль к числу
+                       h = (h < 10) ? "0" + h : h;
+                       m = (m < 10) ? "0" + m : m;
+                       s = (s < 10) ? "0" + s : s;
+
+                       hours.innerHTML = h + "<br><span>Hours</span>";
+                       minutes.innerHTML = m + "<br><span>Minutes</span>";;
+                       seconds.innerHTML = s + "<br><span>Seconds</span>";;
+                       ampm.innerHTML = am;
+
+                       hh.style.strokeDashoffset = 130 - (130 * h) / 12;
+                       // заполнение круга  часы
+                       mm.style.strokeDashoffset = 130 - (130 * m) / 60;
+                      // минуты
+                       ss.style.strokeDashoffset = 130 - (130 * s) / 60;
+                      // секунды
+
+                       hr_dot.style.transform = `rotate(${h * 30}deg)`;
+                       //360 / 12 = 30
+                       min_dot.style.transform = `rotate(${m * 6}deg)`;
+                       //360 / 60 = 6
+                       sec_dot.style.transform = `rotate(${s * 6}deg)`;
+
+                       })
+                     </script>
+
+               </div>
+               <img src="ClubFit8.png" class="produkt_fit">
+             </div>
+
+       </div>
+     <!-- <video src="NikeWomenBetterForItThought.mp4" autoplay loop muted type="mp4"></video> -->
+     <img src="fonses.jpg" class="mask">
+     <!-- <h2>Fitness</h2>-->
+    <ul class="sci">
+        <li>
+          <a href="https://api.whatsapp.com/send?phone=+375295220326" class="whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a href="https://t.me/IanaBondarenko" class="telegram"><i class="fa fa-telegram" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a target = "_blank" href="https://instagram.com/figurafint" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        </li>
+      </ul>
+   </section>
+     <script type="text/javascript" src="vanilla-tilt.js"></script>
+     <script>
+
+       VanillaTilt.init(document.querySelectorAll(".sci li a"), {
+          max: 30,
+          speed: 400,
+           glare: true,
+           "max-glare": 1,
+        });
+
+     </script>
+
+   <section class="mainWTP" id="mainWTP">
+       <!--<img src="fitness_32.png" class="fitBg">-->
+      <div class="contentWTP">
+         <div class="circlecoCLP"></div>
+           <div class="contentCLP">
+             <div class="textBoxCLP">
+               <h2>Для Кого Подходит:</h2>
+               <p>✓ Кто хочет не просто похудеть, но и создать красивые контуры тела<br>
+                 ✓ Не тратить деньги на абонемент в fitness-зал, который не будет использован<br>
+                 ✓ Работаете на удалёнке, и короткие упражнения необходимы для восстановления тонуса мышц и
+                 психоэмоциональной разрядки<br>
+                 ✓ Хотите заниматься в удобное время Беременным и мамам на ГВ, если не с кем оставить малыша<br>
+                 ✓ Давно ищете эффективный комплекс по доступной цене в сочетании с простым и вкусным меню</p>
+                  </p>
+               <a href="#sec" style="--clr: #ff22bb;--i:0" class="btnWTP">
+                 <!--<span>Button</span>-->
+                 <span></span>
+                 <span></span>
+                 <span></span>
+                 <span></span>
+                 Узнать больше
+               </a>
+             </div>
+             <div class="imgBoxCLP">
+               <div class="swiper mySwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="fitClub37.png"></div>
+                    <div class="swiper-slide"><img src="png54.png"></div>
+                    <div class="swiper-slide"><img src="ClubFit2.png"></div>
+                    <div class="swiper-slide"><img src="png55.png"></div>
+                    <div class="swiper-slide"><img src="png56.png"></div>
+                    <div class="swiper-slide"><img src="ClubFit3.png"></div>
+                  </div>
+                </div>
+             </div>
+           </div>
+      </div>
+      <img src="fonses.jpg" class="mask">
+   </section>
+
+   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+   <script>
+       var swiper = new Swiper(".mySwiper", {
+         effect: "coverflow",
+         grabCursor: true,
+         centeredSlides: true,
+         slidesPerView: "auto",
+         coverflowEffect: {
+           rotate: 0,
+           stretch: 0,
+           depth: 200,
+           modifier: 1,
+           slideShadows: true,
+         },
+         pagination: {
+           el: ".swiper-pagination",
+         },
+         loop: true,
+       });
+
+       function toggleMenu () {
+         const menuToggle = document.querySelector('.toggleCLP');
+         const navigationCLP = document.querySelector('.navigationCLP')
+         menuToggle.classList.toggle('active')
+         navigationCLP.classList.toggle('active')
+       }
+     </script>
+
+
+   <section class="sec" id="sec">
+     <div class="contentPepsiBox">
+       <div class="textBoxPepsiBox">
+         <h2>ваши результаты<br><span>I like</span></h2>
+
+         <div class="conteinerthreeCardBoxPepsi">
+           <div class="cardthreeCardBoxPepsi">
+             <div class="imgthreeCardBoxPepsi">
+               <img src="survey.png">
+             </div>
+             <div class="contentthreeCardBoxPepsi">
+               <div class="contentBxthreeCardBoxPepsi">
+                 <h3>Результат<br><span>через 30 дней</span></h3>
+                 <p>⭐️Снижение веса на 5 – 8 кг (возможно до 12 кг)</p>
+                 <p>⭐️Увеличение тонуса мышц и легкость движений</p>
+                 <p>⭐️Повышение стрессоустойчивости</p>
+                 <p>⭐️Уверенность в себе, подкрепляемое комплиментами и интересом со стороны противоположного пола</p>
+                 <p>⭐️Укрепление семейных отношений вследствие увеличения вашей привлекательности и повышения либидо</p>
+                 <p>⭐️Нормализация показателей здоровья, укрепление иммунитета</p>
+               </div>
+             </div>
+           </div>
+           <div class="cardthreeCardBoxPepsi">
+             <div class="imgthreeCardBoxPepsi">
+               <img src="homework.png">
+             </div>
+             <div class="contentthreeCardBoxPepsi">
+               <div class="contentBxthreeCardBoxPepsi">
+                 <h3>Курс<br><span>Содержание</span></h3>
+                 <p>⭐️ Меню ПП на 30 дней, от которого худеют даже без тренировок</p>
+                 <p>⭐️ Видео тренировки:</p>
+                 <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&#9989;все проблемные зоны</p>
+                 <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&#9989;кардио</p>
+                 <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&#9989;раcтяжка</p>
+                 <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&#9989;комплекс для беременных и мам на ГВ</p>
+                 <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&#9989;топ 5 упражнений для спины, пресса и ягодиц</p>
+                 <p>⭐️ +1 из 3-х подарков на выбор</p>
+           </div>
+             </div>
+           </div>
+           <div class="cardthreeCardBoxPepsi">
+             <div class="imgthreeCardBoxPepsi">
+               <img src="present.png">
+             </div>
+             <div class="contentthreeCardBoxPepsi">
+               <div class="contentBxthreeCardBoxPepsi">
+                 <h3>Подарок<br><span>один из 3-х за полный курс</span></h3>
+                 <p>1."О ГОРМОНАХ" КАКИЕ СБОИ В ГОРМОНАЛЬНОЙ СИСТЕМЕ ПРИВОДЯТ К НАБОРУ ВЕСА И КАК ИХ УСТРАНИТЬ.</p><br>
+                  <p>2."ТИПЫ ТЕЛОСЛОЖЕНИЯ" МЕТОДЫ КОРРЕКЦИИ С ПОМОЩЬЮ ПИТАНИЯ.</p><br>
+                  <p>3."МИФЫ ПРО ПОХУДЕНИЕ" НА ЧТО НЕ СТОИТ ТРАТИТЬ СИЛЫ, ВРЕМЯ И ДЕНЬГИ</p>
+               </div>
+             </div>
+           </div>
+         </div>
+
+       </div>
+       <div class="imgBoxPepsiBox">
+         <img src="fitClub35.png" class="pepsi">
+       </div>
+     </div>
+     <ul class="thumb">
+       <li><img src="fitClub35.png" onclick="imgSlider('fitClub35.png');changeBgColor('var(--white)')"></li>
+       <li><img src="ClubFit1.png" onclick="imgSlider('ClubFit1.png');changeBgColor('#e60c2c')"></li>
+       <li><img src="fitClub39-fpng.png" onclick="imgSlider('fitClub39-fpng.png');changeBgColor('#0062be')"></li>
+     </ul>
+     <!-- <p class="copyrightText">© 2020 - 2022 Все права сохранены | Интернет - магазин <a href="#">ShopMaster.info</a></p> -->
+
+ </section>
+ <script type="text/javascript">
+   function imgSlider(anything) {
+     document.querySelector('.pepsi').src = anything;
+   }
+   function changeBgColor(color) {
+     const sec = document.querySelector('.sec');
+     sec.style.background = color;
+   }
+ </script>
+   <!-- sidebar navigation -->
+   <ul class="navigation">
+     <li><a href="https://shopmaster.info/FitnessClubMaster/">Главная</a></li>
+     <li><a href="https://shopmaster.info/FitnessClubMaster/Contact/">Контакты</a></li>
+   </ul>
+
+   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    let dayNight = document.querySelector('.dayNight')
+    let menuToggle = document.querySelector('.menuToggle')
+    let body = document.querySelector('body')
+    let navigation = document.querySelector('.navigation')
+    dayNight.onclick = function() {
+      body.classList.toggle('dark')
+      dayNight.classList.toggle('active')
+    }
+
+    menuToggle.onclick = function() {
+      menuToggle.classList.toggle('active')
+      navigation.classList.toggle('active')
+    }
+
+  </script>
+
+
+  <section class="mainWTPVideoBanne">
+     <div class="contentWTPVideoBanne">
+
+       <div class="containerTextVideoBanner">
+         <video src="NikeWomenBetterForItThought.mp4" muted loop autoplay type = "mp4"></video>
+        <div class="textBoxTextVideoBanner">
+          <h2>Наши</h2> гарантии <!-- <span>Video Text</span> -->
+
+
+         <div class="containerHoverEffectsCardResponsive">
+            <div class="cardHoverEffectsCardResponsive">
+            <div class="imgBxHoverEffectsCardResponsive">
+              <img src="guarantee.png" >
+            </div>
+            <div class="contentHoverEffectsCardResponsive">
+              <h2></h2>
+              <p>⭐️ Возврат денежных средств, если курс вам не понравится<br>
+              ⭐️ Гарантированное снижение веса в среднем на 5-8 кг через 30 дней<br>
+              ⭐️ Сертификаты диетолога<br>и фитнес-тренера</p>
+            </div>
+            </div>
+         </div>
+        </div>
+       </div>
+
+    </div>
+     <img src="fonses.jpg" class="mask">
+  </section>
+
+
+
+
+  <section class="mainCSS3">
+    <div class="contentWTPCSS3">
+
+
+       <div class="col-cm-4CSS3">
+         <div class="price-tableCSS3">
+           <div class="price-headCSS3">
+             <h4>ПРОБНАЯ ВЕРСИЯ</h4>
+             <h2><span>Бесплатно</span></h2>
+           </div>
+           <div class="price-contentCSS3">
+             <ul>
+               <li>ОГНЕННАЯ ТРЕНИРОВКИ ПРЕССА</li>
+               <li>ПРОЖАРКА ЯГОДИЦ</li>
+               <li>СЖИГАЕМ УШКИ НА БЁДРАХ</li>
+               <li>ПИТАНИЕ НА 4 ДНЯ</li>
+             </ul>
+           </div>
+           <div class="price-buttonCSS3">
+             <!-- <a href="#">Скачать</a> -->
+             <a href="https://shopmaster.info/wp-content/uploads/2021/12/besplatniy_courses.rar" style="--clr: #ff22bb;--i:0" class="btnWTP">Скачать</a>
+           </div>
+         </div>
+      </div>
+         <div class="col-cm-4CSS3">
+         <div class="price-tableCSS3">
+           <div class="price-headCSS3-1">
+             <h4>ПОЛНЫЙ КУРС</h4>
+             <h2>&#8381;<span>350</span></h2>
+           </div>
+           <div class="price-contentCSS3-1">
+             <ul>
+               <li>проблемные зоны</li>
+               <li>кардио</li>
+               <li>раcтяжка</li>
+               <li>топ 5 упражнений для спины, пресса и ягодиц</li>
+               <li>комплекс для беременных и мам на ГВ</li>
+             </ul>
+           </div>
+           <div class="price-buttonCSS3-1">
+             <a href="https://api.whatsapp.com/send?phone=+375295220326">Купить</a>
+           </div>
+         </div>
+       </div>
+    </div>
+     <img src="fonses.jpg" class="mask">
+  </section>
+
+
+
+
+
+  <section class="mainWTPFooter">
+     <div class="contentWTPFooter">
+
+       <div class="containerImageReflectionEffect">
+         <img src="сертификатруслана3.jpg">
+         <img src="photo1640468033.jpeg">
+         <img src="сертификатруслана2.jpg">
+       </div>
+
+    </div>
+     <img src="fonses.jpg" class="mask">
+  </section>
+
+
+  <section class="mainWTPFootercopyrightText">
+     <div class="contentWTPFootercopyrightText">
+
+       <p class="copyrightText">© 2020 - 2022 Все права сохранены | Интернет - магазин <a target = "_blank" href="https://shopmaster.info/">ShopMaster.info</a></p>
+
+     </div>
+     <img src="fonses.jpg" class="mask">
+  </section>
+
+  <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(70880341, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true,
+        ecommerce:"dataLayer"
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/70880341" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</body>
+</html>
