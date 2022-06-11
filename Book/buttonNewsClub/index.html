@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="buttonNewsClub.css">
+  <title>buttonNewsClub</title>
+</head>
+<body>
+    <a href="#" class = "btnWTPNews"><span>Узнать больше</span></a>
+    <script>
+      const btnWTPNews = document.querySelector('.btnWTPNews');
+      btnWTPNews.onmousemove = function(e) {
+        const x = e.pageX - btnWTPNews.offsetLeft;
+        const y = e.pageY - btnWTPNews.offsetTop;
+
+        btnWTPNews.style.setProperty('--x', x + 'px');
+        btnWTPNews.style.setProperty('--y', y + 'px');
+      }
+    </script>
+</body>
+</html>
