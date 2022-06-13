@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  /*position: relative;
+  justify-content: center;
+  align-items: center;*/
+  font-size: 14px;
+  color: #000;
+  line-height: 25px;
+}
+.greeting {
+  text-align: center;
+  padding: 30px;
+  font-size: 36px;
+  color: #16171c;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+p {
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.secondLevel {
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
+  line-height: 20px;
+  text-decoration: underline;
+}
+.list {
+  text-align: center;
+  padding-bottom: 20px;
+  font-style: italic; /* шрифт курсивный */
+  list-style-type: square; /* делает кружечки квадратиками */
+}
+table {
+  margin: auto;
+}
+thead {
+
+  background-color: #00d0ff;
+}
+.tablitsa {
+  width: 700px;
+  text-align: center;
+}
+.tablitsa td, th {
+  border: 1px solid #111;  /* solid это в переводе сплошная */
+  padding: 5px 10px 5px 10px  /* top, right, bottom, left */
+}
+tfoot {
+  text-align: right;
+  background-color: #99ccff;
+}
