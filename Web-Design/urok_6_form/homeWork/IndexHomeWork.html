@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="homeWork.css">
+  <title>HomeWork</title>
+</head>
+<body>
+      <div class="homeWorkForm">
+         <form class = "FormHomeWork" action="resultHomeWork.php" method="POST">
+           <p><input type="text" name="userCity" required = "required"><span>Ведите название любимого города</span></p>
+           <p><input type="text" name="userYear" required = "required"><span>Введите год (Високосный/Нет)</span></p>
+           <p><input type="text" name="userDate" required = "required"><span>Ввод даты для уточнения дня недели</span></p>
+           <p><input type="text" name="userBirthD" required = "required"><span>Дней до вашего дня рождения</span></p>
+           <button name="send">
+             <span>Отправить</span>
+             <span>&nbsp;&nbsp;&nbsp;&nbsp;Данные</span>
+           </button>
+
+         </form>
+      </div>
+</body>
+</html>
