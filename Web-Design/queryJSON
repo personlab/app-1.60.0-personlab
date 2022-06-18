@@ -1,0 +1,5 @@
+SELECT clients.surName, clients.firstName, clients.lastName, clients.phone, material.materialName, product.productName,
+orders.orderData FROM clients JOIN material JOIN product JOIN orders ON orders.clientID = clients.ID and orders.materialID and orders.productID = product.ID;
+
+
+SELECT clients.surName, clients.firstName, clients.lastName, clients.phone, material.materialName, product.productName, orders.orderData FROM clients JOIN material JOIN product JOIN orders ON orders.clientID = clients.ID and orders.materialID and orders.productID = product.ID;
