@@ -1,0 +1,33 @@
+.btnWTPNews {
+  position: relative;
+  width: 350px;
+  display: flex;
+  padding: 5px 33%;
+  background: rgb(0 0 0 / 0%);
+  border-radius: 4px;
+  border: 1px solid #00dfc4;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 1px;
+  overflow: hidden;
+}
+.btnWTPNews span {
+  position: relative;
+  z-index: 1;
+}
+.btnWTPNews::before {
+  content: '';
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  transform: translate(-100%, -30%);
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: #2196f3;
+  transition: width 0.9s, height 0.9s;
+}
+.btnWTPNews:hover::before {
+  width: 950px;
+  height: 550px;
+}
