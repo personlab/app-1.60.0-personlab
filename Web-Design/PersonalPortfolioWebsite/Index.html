@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Personal Portfolio Website</title>
+</head>
+<body>
+   <div class = "navigation">
+     <div class = "banner">
+       <img src = "me.jpg" class = "cover">
+     </div>
+     <div class="navLink">
+       <ul>
+         <li><a href="#">Главная</a></li>
+         <li><a href="#">Обо мне</a></li>
+         <li><a href="#">Сервис</a></li>
+         <li><a href="#">Портфолио</a></li>
+         <li><a href="#">Контакты</a></li>
+       </ul>
+     </div>
+   </div>
+
+   <section class = "sec">
+     <header>
+       <div class="toggle"></div>
+       <a href="#" class = "btn">Я здесь</a>
+     </header>
+
+     <div class="imgBx">
+       <img src="me-.jpg" class = "cover">
+     </div>
+     <div class="content">
+       <h2>Привет, я<br><span>Юрий Барагин</span></h2>
+       <p>Synergy Learning System PHP-разработчик.</p>
+ <a href="#" class = "btn">Посмотреть мои работы</a>
+     </div>
+     <footer>
+       <ul class = "sci">
+         <li><a href="#"><img src="facebook.png"></a></li>
+         <li><a href="#"><img src="twitter.png"></a></li>
+         <li><a href="#"><img src="instagram.png"></a></li>
+       </ul>
+       <p class ="copyrightText">© 2020 - 2022 ShopMaster.info</p>
+     </footer>
+   </section>
+
+   <script>
+     let menuToggle = document.querySelector('.toggle');
+     let navigation = document.querySelector('.navigation');
+     let sec = document.querySelector('.sec');
+     menuToggle.onclick = function() {
+       menuToggle.classList.toggle('active');
+       navigation.classList.toggle('active');
+       sec.classList.toggle('active');
+     }
+   </script>
+
+</body>
+</html>
