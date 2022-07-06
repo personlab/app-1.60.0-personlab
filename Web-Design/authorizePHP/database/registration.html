@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="btnTwuo.css">
+  <title>Форма Регистрации</title>
+</head>
+<body>
+  <section class="about">
+    <div class="contact-us">
+    <form class = 'userForm' method = 'GET' action = 'databaseOneResult.php' >   <!-- enctype = 'multipart/form-data'> -->
+      <h3>Создание БД</h3>
+      <p><input type = 'text' name = 'servernameFour' required = 'required'><span>Host:<span class = 'error'>*</span></span></p>
+      <p><input type = 'text' name = 'loginHostFour' required = 'required'><span>LoginHost:<span class = 'error'>*</span></span></p>
+      <p><input type = 'text' name = 'passwordHostFour'><span>PasswordHost:<span class = 'error'>*</span></span></p>
+      <p><input type = 'text' name = 'nameDatabaseFour' required = 'required'><span>NameDatabase:<span class = 'error'>*</span></span></p>
+      <p><input type = 'text' name = 'nameTableFour' required = 'required'><span>NameTable:<span class = 'error'>*</span></span></p>
+      <br>
+      <p>Создание таблицы</p><p>укажите название столбцов</p>
+      <p><input type = 'text' name = 'nameFour' required = 'required'><span>FirstName:<span class = 'error'>*</span></span></p>
+      <p><input type = 'text' name = 'surNameFour' required = 'required'><span>LastName:<span class = 'error'>*</span></span></p>
+      <p><input type = 'text' name = 'loginFour' required = 'required'><span>userLogin:<span class = 'error'>*</span></span></p>
+      <p><input type = 'text' name = 'emailFour' required = 'required'><span>userEmail:<span class = 'error'>*</span></span></p>
+      <p><input type = 'text' name = 'phoneFour' required = 'required'><span>userPhone:<span class = 'error'>*</span></span></p>
+      <p><input type = "text" name = "dateFour" required = "required"><span>reg_date<span class = 'error'>*</span></span></p>
+      <p><input type = "text" name = "passwdFour" required = "required"><span>userPassword<span class = 'error'>*</span></span></p>
+      <p><input type = "text" name = "userGenderFour" required = "required"><span>userGender<span class = 'error'>*</span></span></p>
+      <p><input type = 'text' name = 'userMessageFour' required = 'required'><span>userMessage<span class = 'error'>&nbsp;&nbsp;*</span></span></p>
+      <button class = 'btn_5' type = 'submit' name = 'submit'>
+          <span>Создать таблицу</span>
+          <span>Создать таблицу</span>
+      </button>
+    </form>
+  </div>
+    <div class="contact-us">
+      <form class = 'userForm' method = 'GET' action = 'formResultOne.php' >   <!-- enctype = 'multipart/form-data'> -->
+        <h3>Подключение к БД</h3>
+        <p><input type = 'text' name = 'servernameOne' required = 'required'><span>Host:<span class = 'error'>*</span></span></p>
+        <p><input type = 'text' name = 'loginHostOne' required = 'required'><span>LoginHost:<span class = 'error'>*</span></span></p>
+        <p><input type = 'text' name = 'passwordHostOne'><span>PasswordHost:<span class = 'error'>*</span></span></p>
+        <p><input type = 'text' name = 'nameDatabaseOne'required = 'required'><span>NameDatabase:<span class = 'error'>*</span></span></p>
+        <p><input type = 'text' name = 'nameTableOne' required = 'required'><span>NameTable:<span class = 'error'>*</span></span></p>
+        <br>
+        <h3>Создать пользователя</h3>
+        <p><input type = 'text' name = 'name' required = 'required'><span>Name:<span class = 'error'>*</span></span></p>
+        <p><input type = 'text' name = 'surtName' required = 'required'><span>SurName:<span class = 'error'>*</span></span></p>
+        <p><input type = 'text' name = 'login' required = 'required'><span>Login:<span class = 'error'>*</span></span></p>
+        <p><input type = 'text' name = 'email' required = 'required'><span>Email:<span class = 'error'>*</span></span></p>
+<div class="group1">
+        <p><input type = 'text' id = "Phone" name = 'phone' required = 'required' placeholder="Phone *"></p>
+</div>
+        <div class="group2">
+        <p><input type = 'date' id = "date" name = 'date' required = 'required'></p>
+      </div>
+          <div class="password-Checker">
+            <div class="input-group">
+              <p><input type = "password" id = "password" name = "passwd" required = "required" placeholder="Password *"></p>
+            </div>
+            <div class="progress">
+              <div class="bar"></div>
+            </div>
+          </div>
+        <p><input type = 'password' name = 'passwd_confirm' required = 'required'><span>Pass.confirm<span class = 'error'>*</span></span></p>
+        <p><lable class = 'sex'>Пол</lable></p>
+          <div class = 'genderUser'>
+              Мужской <input class = 'radioB' type = 'radio' name = 'userGender' value = 'Мужской'>
+              Женский <input class = 'radioB' type = 'radio' name = 'userGender' value = 'Женский'>
+          </div>
+        <p><textarea name = 'userMessage' cols="30" rows="3" required = 'required'></textarea><span>Ваш комментарий<span class = 'error'>&nbsp;&nbsp;*</span></span></p>
+          <div class="capth">
+        <p><img src = "captcha.php" class = "captchas" ></p><!--<p><input type="text" name="captcha" placeholder="Проверочный код" required="required"></p> -->
+        <p><input type="text" name="captcha" placeholder="Проверочный код *" required="required"></p>
+          </div>
+        <button class = 'btn' type = 'submit' name = 'submit'>
+            <span>Зарегистрироваться</span>
+            <span>Зарегистрироваться</span>
+        </button><!--  required = "required" <form class = "userForm" method = "POST" action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>"> обработка кода php в этом же файле -->
+            <br>
+            <a href="privatePage.php" class = 'btn_2'>
+              <span><h5>Персональная страница</h5></span>
+              <span><h5>Персональная страница</h5></span>
+            </a>
+            <br>
+      </form>
+    </div>
+    <div class="imgBx">
+      <form class = 'userForm' method = 'POST' action = 'resultFormResultUpdate.php'>
+        <h3>Подключение к БД</h3>
+        <p><input type = 'text' name = 'servernameThree' required = 'required'><span>Host:<span class = 'error'>*</span></span></p>
+        <p><input type = 'text' name = 'loginHostThree' required = 'required'><span>LoginHost:<span class = 'error'>*</span></span></p>
+        <p><input type = 'text' name = 'passwordHostThree'><span>PasswordHost:<span class = 'error'>*</span></span></p>
+        <p><input type = 'text' name = 'nameDatabaseThree' required = 'required'><span>NameDatabase:<span class = 'error'>*</span></span></p>
+        <p><input type = 'text' name = 'nameTableThree' required = 'required'><span>NameTable:<span class = 'error'>*</span></span></p>
+        <h3>Обновление данных по ID</h3>
+          <p><input type = 'text' name = 'id' required = 'required'><span>ID:<span class = 'error'>*</span></span></p>
+          <p><input type = 'text' name = 'name1' required = 'required'><span>Name:<span class = 'error'>*</span></span></p>
+          <p><input type = 'text' name = 'surtName1' required = 'required'><span>SurName:<span class = 'error'>*</span></span></p>
+          <p><input type = 'text' name = 'login1' required = 'required'><span>Login:<span class = 'error'>*</span></span></p>
+          <p><input type = 'text' name = 'email1' required = 'required'><span>Email:<span class = 'error'>*</span></span></p>
+          <p><input type = 'text' name = 'phone1' required = 'required'><span>Phone:<span class = 'error'>*</span></span></p><!--  <p><input type = 'password' name = 'passwd1' required = 'required'><span>Password<span class = 'error'>*</span></span></p><p><input type = 'password_confirm' name = 'passwd_confirm1' required = 'required'><span>Pass.confirm<span class = 'error'>*</span></span></p> -->
+            <br>
+            <p><lable class = 'sex'>Пол</lable></p>
+              <div class = 'genderUser'>
+                 Мужской <input class = 'radioB' type = 'radio' name = 'userGender1' value = 'Мужской'>
+                 Женский <input class = 'radioB' type = 'radio' name = 'userGender1' value = 'Женский'>
+              </div>
+                 <button class = 'btn_3' type = 'submit' name = 'submit'>
+                    <span>Обновить данные</span>
+                    <span>Обновить данные</span>
+                 </button>
+      </form>
+      <form class = 'userForm' method = 'POST' action = 'resultVisionResult.php'>
+        <h3>Подключение к БД</h3>
+        <p><input type = 'text' name = 'servernameSecond' required = 'required'><span>Host:<span class = 'error'>*</span></span></p>
+        <p><input type = 'text' name = 'loginHostSecond' required = 'required'><span>LoginHost:<span class = 'error'>*</span></span></p>
+        <p><input type = 'text' name = 'passwordHostSecond'><span>PasswordHost:<span class = 'error'>*</span></span></p>
+        <p><input type = 'text' name = 'nameDatabaseSecond' required = 'required'><span>NameDatabase:<span class = 'error'>*</span></span></p>
+        <p><input type = 'text' name = 'nameTableSecond' required = 'required'><span>NameTable:<span class = 'error'>*</span></span></p>
+        <h3>Получить данные по ID</h3>
+          <p><input type = 'text' name = 'id' required = 'required'><span>ID:<span class = 'error'>*</span></span></p>
+             <br>
+                 <button class = 'btn_4' type = 'submit' name = 'submit'>
+                      <span> Получить данные</span>
+                      <span> Получить данные</span>
+                  </button>
+      </form>
+
+    </div>
+</section>
+<script src="script.js"></script>
+</body>
+</html>
