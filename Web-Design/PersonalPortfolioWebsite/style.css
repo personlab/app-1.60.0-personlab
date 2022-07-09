@@ -9,6 +9,12 @@
 body {
   overflow-x: hidden; /* убирает прокрутку снизу*/
 }
+#time {
+  display: flex;;
+  gap: 10px;
+  justify-content: left;
+  color: #777;
+}
 .navigation {
   position: fixed;
   top: 0;
@@ -177,6 +183,7 @@ header {
 }
 .sec .content .btn {
   background: #1e73be;
+  margin-bottom: 20px;
 }
 footer {
   position: absolute;

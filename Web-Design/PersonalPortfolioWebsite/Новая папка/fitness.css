@@ -1,0 +1,2360 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+body {
+  background: #030303;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+section {
+  position: relative;
+  padding: 30px;
+}
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000000;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.header h2 {
+  position: relative;
+  font-size: 2vw;
+  /*-webkit-text-stroke: 0.1vw rgba(255,255,255,0.05);*/
+  text-transform: uppercase;
+}
+.header h2::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: #00b3ff;
+/*  -webkit-text-stroke: 0.1vw rgba(255,255,255,0.05);*/
+  /*border-right: 2px solid rgb(221 71 231 / 55%);*/
+  overflow: hidden;
+/*  text-shadow: 0 0 1px #00b3ff,
+                0 0 2px #00b3ff,
+                0 0 4px #00b3ff;*/
+  animation: animateBannerTop 6s linear infinite;
+}
+@keyframes animateBannerTop {
+  0%, 10%, 100% {
+    width: 0;
+  }
+  70%, 90% {
+    width: 100%;
+  }
+}
+@media (max-width:360px) {
+  .header h2 {
+    font-size: 6vw;
+  }
+}
+.header .logo {
+  position: fixed;
+  color: rgba(255,255,255,0.05);
+  text-decoration: none;
+  font-size: 1.2em;
+}
+.toggle {
+  position: fixed;
+  top: 27px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+  background: url(toggle.png);
+  background-size: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  z-index: 1000;
+}
+.toggle.active {
+  background: #000 url(close.png);
+  background-size: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/*  Меню  */
+.sidebar {
+  position: relative;
+  height: 100vh;
+
+  width: 100%;
+  position: fixed;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:  -20px;
+  transition: 0.5s;
+  padding: 100px;
+  z-index: 100;
+  left: -100%;
+  overflow: hidden;
+}
+.sidebar.active {
+  left: 0;
+}
+.sidebar ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /**/
+  /*overflow: hidden;*/
+
+}
+.sidebar ul li {
+  list-style: none;
+  margin: 30px;
+}
+.sidebar ul li a {
+  position: relative;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 4em;
+  /*margin: 10px 0;*/
+  font-weight: 700;
+  /*letter-spacing: 2px;*/
+  /*text-transform: uppercase;*/
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+.sidebar ul li a:hover {
+  color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-20);
+  transition-delay: 0s;
+}
+.sidebar ul li a::before {
+  content: attr(data-text);
+  position: absolute;
+  bottom: -10px;
+  pointer-events: none;
+  z-index: 1;
+  font-size: 0.35em;
+  color: #3bffe8;
+  font-weight: 500;
+  letter-spacing: 100px;
+  opacity: 0;
+  transition: 0.5s;
+  text-shadow: 0 0 10px #3bffe8,
+  0 0 30px #3bffe8,
+  0 0 80px #3bffe8;
+}
+.sidebar ul li a:hover::before {
+  letter-spacing: 6px;
+  opacity: 1;
+  transition-delay: 0.25s;
+}
+/* конец меню */
+
+.banner {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Тень снизу */
+/*.banner:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  z-index: 1;
+  background: linear-gradient(to top,#111,transparent);
+}*/
+.banner .content {
+  position: relative;
+  margin-top: 40px;
+  max-width: 100%;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+}
+
+/* неон */
+
+.banner .content h2 {
+  /*color: #fff;
+  font-size: 5em;*/
+
+  color: #fff;
+  font-size: 5em;
+  font-weight: 600;
+  /*letter-spacing: 0.1em;*/
+  text-shadow: 0 0 10px #00b3ff,
+                0 0 20px #00b3ff,
+                0 0 40px #00b3ff,
+                0 0 80px #00b3ff,
+                0 0 120px #00b3ff;
+
+}
+/* вертикальная полоса с права*/
+/*
+.lightbarNeonText {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10%;
+  border-radius: 10px;
+  background: #fff;
+  z-index: 2;
+  box-shadow: 0 0 10px #00b3ff,
+                0 0 20px #00b3ff,
+                0 0 40px #00b3ff,
+                0 0 80px #00b3ff,
+                0 0 120px #00b3ff;
+  animation: animatelightbarNeonText 5s linear infinite;
+}
+@keyframes animatelightbarNeonText {
+  0%, 5% {
+    transform: scaleY(0) translateX(0);
+  }
+  10% {
+    transform: scaleY(1) translateX(0);
+  }
+  90% {
+    transform: scaleY(1) translateX(calc(1300px - 10px));
+  }
+  95%, 100% {
+    transform: scaleY(0) translateX(calc(1300px - 10px));
+  }
+}*/
+/*
+/*закрытие текста*/
+/*
+.topLayerNeonText {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  background: #000;
+  animation: animatetopLayerNeonText 10s linear infinite;
+}
+@keyframes animatetopLayerNeonText {
+  0%, 2.5% {
+    transform: translateX(0);
+  }
+  5% {
+    transform: translateX(0);
+  }
+  45% {
+    transform: translateX(100%);
+  }
+  47.5%, 50% {
+    transform: translateX(100%);
+  }
+  50.001%, 52.5% {
+    transform: translateX(-100%);
+  }
+  55% {
+    transform: translateX(-100%);
+  }
+  95% {
+    transform: translateX(0);
+  }
+  97.5%, 100% {
+    transform: translateX(0);
+  }
+}
+*/
+
+/* конец неона */
+
+
+
+.banner .content h3 {
+  color: #fff;
+  font-size: 2.9em;
+}
+.banner .content p {
+  color: #e1dee0;
+  font-size:1em;
+}
+/*.banner .content h5 {
+  position: relative;
+  font-size: 4vw;
+  color: #252839;
+  -webkit-text-stroke: 0.1vw #383b52;
+  text-transform: uppercase;
+}
+.banner .content h5::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: #01fe87;
+  -webkit-text-stroke: 0.1vw #383b52;
+  border-right: 2px solid #01fe87;
+  overflow: hidden;
+  animation: animateBannerTop 6s linear infinite;
+}
+@keyframes animateBannerTop {
+  0%, 10%, 100% {
+    width: 0;
+  }
+  70%, 90% {
+    width: 100%;
+  }
+}
+*/
+
+/* размытие текста */
+h2 span {
+  transition: 1.5s;
+}
+h2:hover span {
+  filter: blur(20px);
+  opacity: 0;
+  transform: scale(2);
+}
+h2 span:nth-child(10n+1) {
+  transition-delay: 0.8s;
+}
+h2 span:nth-child(10n+2) {
+  transition-delay: 0.7s;
+}
+h2 span:nth-child(10n+3) {
+  transition-delay: 0.6s;
+}
+h2 span:nth-child(10n+4) {
+  transition-delay: 0.5s;
+}
+h2 span:nth-child(10n+5) {
+  transition-delay: 0.4s;
+}
+h2 span:nth-child(10n+6) {
+  transition-delay: 0.3s;
+}
+h2 span:nth-child(10n+7) {
+  transition-delay: 0.2s;
+}
+h2 span:nth-child(10n+8) {
+  transition-delay: 0.1s;
+}
+h2 span:nth-child(10n+9) {
+  transition-delay: 0.1s;
+}
+h2 span:nth-child(10n+10) {
+  transition-delay: 0.2s;
+}
+h2 span:nth-child(10n+11) {
+  transition-delay: 0.3s;
+}
+h2 span:nth-child(10n+12) {
+  transition-delay: 0.4s;
+}
+h2 span:nth-child(10n+13) {
+  transition-delay: 0.5s;
+}
+h2 span:nth-child(10n+14) {
+  transition-delay: 0.6s;
+}
+h2 span:nth-child(10n+15) {
+  transition-delay: 0.7s;
+}
+h2 span:nth-child(10n+16) {
+  transition-delay: 0.8s;
+}
+h2 span:nth-child(10n+17) {
+  transition-delay: 0.9s;
+}
+h2 span:nth-child(10n+18) {
+  transition-delay: 1.0s;
+}
+h3 span {
+  transition: 1.5s;
+}
+h3:hover span {
+  filter: blur(20px);
+  opacity: 0;
+  transform: scale(2);
+}
+h3 span:nth-child(10n+1) {
+  transition-delay: 0.1s;
+}
+h3 span:nth-child(10n+2) {
+  transition-delay: 0.1s;
+}
+h3 span:nth-child(10n+3) {
+  transition-delay: 0.1s;
+}
+h3 span:nth-child(10n+4) {
+  transition-delay: 1.1s;
+}
+h3 span:nth-child(10n+5) {
+  transition-delay: 1.0s;
+}
+h3 span:nth-child(10n+6) {
+  transition-delay: 0.9s;
+}
+h3 span:nth-child(10n+7) {
+  transition-delay: 0.8s;
+}
+h3 span:nth-child(10n+8) {
+  transition-delay: 0.7s;
+}
+h3 span:nth-child(10n+9) {
+  transition-delay: 0.6s;
+}
+h3 span:nth-child(10n+10) {
+  transition-delay: 0.5s;
+}
+h3 span:nth-child(10n+11) {
+  transition-delay: 0.4s;
+}
+h3 span:nth-child(10n+12) {
+  transition-delay: 0.3s;
+}
+h3 span:nth-child(10n+13) {
+  transition-delay: 0.2s;
+}
+h3 span:nth-child(10n+14) {
+  transition-delay: 0.1s;
+}
+h3 span:nth-child(10n+15) {
+  transition-delay: 0.1s;
+}
+h3 span:nth-child(10n+16) {
+  transition-delay: 0.2s;
+}
+h3 span:nth-child(10n+17) {
+  transition-delay: 0.3s;
+}
+h3 span:nth-child(10n+18) {
+  transition-delay: 0.4s;
+}
+h3 span:nth-child(10n+19) {
+  transition-delay: 0.5s;
+}
+h3 span:nth-child(10n+20) {
+  transition-delay: 0.6s;
+}
+h3 span:nth-child(10n+21) {
+  transition-delay: 0.7s;
+}
+h3 span:nth-child(10n+22) {
+  transition-delay: 0.8s;
+}
+h3 span:nth-child(10n+23) {
+  transition-delay: 0.9s;
+}
+/* конец размытия текста*/
+
+.btn {
+  position: relative;
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 30px;
+  color: #fe48fd;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 20px 50px rgba(0,0,0,.5);
+  overflow: hidden;
+}
+
+/* card */ /*.cardFit  width: 700px; height: 850px; .cardFit:hover   width: 900px;*/
+.cardFit {
+  position: relative;
+  width: 700px;
+  height: 550px;
+  margin: 20px;
+  /*background: #333;*/
+  border-radius: 20px;
+  transition: 0.5s;
+  transition-delay: 0.5s;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.cardFit:hover {
+  width: 900px;
+  transition-delay: 0s;
+}
+.cardFit .circleFit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /*background: #f00;*/
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cardFit .circleFit::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--clr);
+  clip-path: circle(140px at center);
+  transition: 0.5s;
+}
+.cardFit:hover .circleFit::before {
+  clip-path: circle(400px at center);
+}
+.cardFit .circleFit .logoFit {
+  position: relative;
+  margin-left: 40px;
+  width: 300px;
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+.cardFit:hover .circleFit .logoFit {
+  transform: scale(0);
+  transition-delay: 0s;
+}
+.contentFit {
+  position: relative;
+  width: 60%;
+  left: 20%;
+  padding: 20px 20px 20px 40px;
+  opacity: 0;
+  transition: 0.5s;
+  visibility: hidden;
+}
+.cardFit:hover .contentFit {
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.5s;
+}
+.contentFit h2 {
+  text-align: left;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 2.5em;
+  line-height: 1em;
+}
+.contentFit h3 {
+  text-align: left;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 2.5em;
+  line-height: 1em;
+}
+.contentFit p {
+  margin-top: 20px;
+  color: #fff;
+  text-align: left;
+  font-weight: 600;
+}
+.contentFit a {
+  position: relative;
+  color: #fe48fd;
+  padding: 10px 30px;
+  border-radius: 4px;
+  margin-top: 15px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 900;
+  margin-top: 40px;
+}
+.cardFit .produkt_fit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  height: 500px;
+  transition: 0.5s;
+  transition-delay: 0s;
+}
+.cardFit:hover .produkt_fit {
+  left: 78%;
+  transform: translate(-55%, -45%) scale(1);
+  transition-delay: 0.5s;
+}
+/* мобильная версия */
+
+
+@media (max-width: 991px) {
+  .sidebar ul li a {
+    font-size: 2.5em;
+  }
+  .cardFit {
+    width: auto;
+    max-width: 340px;
+    align-items: flex-start;
+  }
+  .cardFit:hover {
+    height: 700px;
+  }
+  .cardFit:hover .produkt_fit {
+    top: initial;
+    bottom: 30px;
+    left: 100%;
+    transform: translate(-40%, 10%) scale(1);
+    height: 200px;
+  }
+  .cardFit .contentFit {
+    width: 100%;
+    left: 0;
+    padding: 40px;
+    font-weight: 600;
+  }
+}
+@media (max-width: 767px) {
+  .sidebar ul li a {
+    font-size: 2.5em;
+  }
+  .cardFit {
+    width: auto;
+    max-width: 290px;
+    height: 290px;
+    align-items: flex-start;
+  }
+  .cardFit:hover {
+    height: 650px;
+    margin: 0;
+  }
+  .cardFit:hover .produkt_fit {
+    display: flex;
+    top: initial;
+    bottom: 30px;
+    left: 110%;
+    transform: translate(-50%, 0%) scale(1);
+    height: 200px;
+  }
+  .cardFit .contentFit {
+    width: 100%;
+    left: 0;
+    padding: 40px;
+  }
+}
+@media (max-width: 360px) {
+  .sidebar ul li a {
+    font-size: 2.5em;
+  }
+  .cardFit {
+    width: auto;
+    max-width: 340px;
+    align-items: flex-start;
+    /*height: 290px;*/
+  }
+  .cardFit:hover {
+    height: 730px;
+  }
+  .cardFit:hover .produkt_fit {
+    display: flex;
+    top: initial;
+    bottom: 100px;
+    left: 50%;
+    transform: translate(-50%, 50%) scale(1);
+    height: 200px;
+  }
+  .cardFit .contentFit {
+    width: 100%;
+    left: 0;
+    padding: 20px;
+  }
+  .banner .content .cardFit .contentFit .btn {
+    margin-bottom: 1px;
+  }
+}
+
+/* end card */
+
+/* кнопки */
+.:before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  width: 50%;
+  background: rgba(255,255,255,0.05);
+}
+.btn span:nth-child(1),
+.btn-1 span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #0c002b, #ff4a96);
+  animation: animate1 2s linear infinite;
+}
+@keyframes animate1 {
+  0% {
+    transform: translateX(-100%);
+     }
+  100% {
+    transform: translateX(100%);
+       }
+}
+.btn span:nth-child(2),
+.btn-1 span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, #0c002b, #ff4a96);
+  animation: animate2 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animate2 {
+  0% {
+    transform: translateY(-100%);
+     }
+  100% {
+    transform: translateY(100%);
+       }
+}
+.btn span:nth-child(3),
+.btn-1 span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to left, #0c002b, #89b4f8);
+  animation: animate3 2s linear infinite;
+}
+@keyframes animate3 {
+  0% {
+    transform: translateX(100%);
+     }
+  100% {
+    transform: translateX(-100%);
+       }
+}
+.btn span:nth-child(4),
+.btn-1 span:nth-child(4) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to top, #0c002b, #89b4f8);
+  animation: animate4 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animate4 {
+  0% {
+    transform: translateY(100%);
+     }
+  100% {
+    transform: translateY(-100%);
+       }
+}
+
+/* конец  */
+
+
+.fitBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+.about {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about .contentBx {
+  min-width: 50%;
+  width: 50%;
+  text-align: end;
+  padding-right: 40px;
+}
+.titleText {
+  font-weight: 600;
+  color: #fff;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+.text {
+  color: #fff;
+  font-size: 1em;
+}
+.about .imgBx {
+  position: relative;
+  min-width: 50%;
+  width: 50%;
+  min-height: 500px;
+}
+
+/*.banner2,*/
+/*.banner3 {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}*/
+.banner4 {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  /*align-items: center;*/
+}
+
+/* ТРи карточки  */
+
+.conteinerCardFitkreative {
+  /*margin-top: 50px;
+  margin-left: 50%;*/
+  position: relative;
+  /*width: 1000px;*/
+  display: flex;
+  flex: 1 1 auto;
+  margin: 0 5px;
+  justify-content: space-between;
+}
+.conteinerCardFitkreative .CardsFitkreative {
+  position: relative;
+  width: 400px;
+  height: 500px;
+  /*background: #000;*/
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.conteinerCardFitkreative .CardsFitkreative:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,.1);
+  border-radius: 4px;
+  z-index: 20;
+  pointer-events: none;
+}
+.conteinerCardFitkreative .CardsFitkreative:nth-child(1),
+.conteinerCardFitkreative .CardsFitkreative:nth-child(1) .overlaykretiveCardFit {
+  background: linear-gradient(45deg,rgb(255 255 255 / 5%),rgb(255 255 255 / 0%));
+}
+.conteinerCardFitkreative .CardsFitkreative:nth-child(2),
+.conteinerCardFitkreative .CardsFitkreative:nth-child(2) .overlaykretiveCardFit {
+  background: linear-gradient(45deg,rgb(255 255 255 / 5%),rgb(255 255 255 / 0%));
+}
+.conteinerCardFitkreative .CardsFitkreative:nth-child(3),
+.conteinerCardFitkreative .CardsFitkreative:nth-child(3) .overlaykretiveCardFit {
+  background: linear-gradient(45deg,rgb(255 255 255 / 5%),rgb(255 255 255 / 0%));
+}
+.conteinerCardFitkreative .CardsFitkreative .imgBxCardFitkreative {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.conteinerCardFitkreative .CardsFitkreative .imgBxCardFitkreative h2 {
+  margin: 10px 0 0;
+  padding: 0;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.conteinerCardFitkreative .CardsFitkreative .overlaykretiveCardFit {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 80px;
+  height: 40px;
+  /*background: #fff;*/
+  box-shadow: 0 6px 9px rgba(0, 0, 0,);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.5s;
+}
+.conteinerCardFitkreative .CardsFitkreative .overlaykretiveCardFit:hover {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: none;
+  opacity: 0.9;
+  border-radius: 10px;
+}
+.conteinerCardFitkreative .CardsFitkreative .overlaykretiveCardFit:before {
+  content: 'Больше';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-delay: 0.5s;
+}
+.conteinerCardFitkreative .CardsFitkreative .overlaykretiveCardFit:hover:before {
+  display: none;
+  transition-delay: 0s;
+}
+.conteinerCardFitkreative .CardsFitkreative .contentCardFitkreative {
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0s;
+  color: #fff;
+}
+.conteinerCardFitkreative .CardsFitkreative .overlaykretiveCardFit:hover ~ .contentCardFitkreative {
+  height: 100%;
+  opacity: 1;
+  visibility: visible;
+  transition: 0.2s;
+  transition-delay: 0.5s;
+  /* бекграунд фона в боксе*/
+  background: linear-gradient(45deg,#000,rgb(0 0 0 / 80%));
+  border-radius: 4px;
+}
+
+.conteinerCardFitkreative .CardsFitkreative .contentCardFitkreative h2 {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+.conteinerCardFitkreative .CardsFitkreative .contentCardFitkreative p {
+  color: #fff;
+  font-weight: 600;
+}
+@media (max-width:767px) {
+  .conteinerCardFitkreative {
+    /*margin-top: 50px;
+    margin-left: 50%;*/
+    position: relative;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    width: 340px;
+    /*width: 1000px;*/
+    display: flex;
+    justify-content: center;
+  }
+  .conteinerCardFitkreative div {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+}
+
+/*  Конец три карточки */
+
+.banner2 {
+  /*position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;*/
+}
+
+
+
+.containerImageReflectionEffect {
+  /*width: 1100px;
+  display: flex;
+  justify-content: space-between;*/
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.containerImageReflectionEffect img {
+   max-width: 340px;
+   margin: 30px;
+   transform: perspective(800px) rotateY(20deg);
+   transition: 0.5s;
+   -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0004);
+}
+.containerImageReflectionEffect:hover img {
+  opacity: 0.1;
+}
+.containerImageReflectionEffect img:hover {
+  transform: perspective(800px) rotateY(0deg);
+  opacity: 1;
+}
+@media (max-width: 420px) {
+  .containerImageReflectionEffect {
+    flex-direction: column;
+  }
+  .containerImageReflectionEffect img {
+     margin: 0;
+     margin-top: 30px;
+   }
+}
+
+
+/**/
+.destination {
+  text-align: center;
+}
+.destination .content {
+  text-align: center;
+}
+.destination .destinationList {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.destination .destinationList .box {
+  position: relative;
+  min-width: 350px;
+  height: 290px;
+  background: #191919;
+  transition: 0.5s;
+  margin: 10px;
+}
+.destination .destinationList:hover .box {
+  opacity: 0.2;
+}
+.destination .destinationList .box:hover {
+  opacity: 1;
+}
+.destination .destinationList .box .imgBx {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+.destination .destinationList .box .content {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.destination .destinationList .box .content h2 {
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.2em;
+}
+.destination .destinationList .box .content h2 span {
+  font-size: 0.8em;
+  font-weight: 300;
+  opacity: 0.5;
+}
+
+/* социальные кнопки */
+.socialMediaSocialMediaIconHoverEffects {
+  display: flex;
+  justify-content: center;
+  /*align-items: center;*/
+  min-height: 55vh;
+  /*flex-direction: column;*/
+  vertical-align: top;
+  transition: 0.5s;
+}
+/*расположение по горизонтали*/
+.sciSocialMediaIconHoverEffects {
+  position: relative;
+  display: flex;
+}
+/*убрать точки с сектора*/
+.sciSocialMediaIconHoverEffects li {
+  list-style: none;
+}
+/*вывод текста под медиа*/
+.sciSocialMediaIconHoverEffects li::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% + 120px));
+  font-size: 10vw;
+  pointer-events: none;
+  font-weight: 700;
+  transition: 0.5s;
+  opacity: 0;
+}
+.sciSocialMediaIconHoverEffects li:hover::before {
+  opacity: 0.1;
+  transform: translate(-50%, calc(-50% + 150px));
+}
+/*Оформление кнопок*/
+.sciSocialMediaIconHoverEffects li a {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  /*background: #ccc;*/
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  border-radius: 10px;
+  text-decoration: none;
+  margin: 35px;
+  font-size: 6em;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
+  transition: background 0.25s;
+}
+.js-tilt-glare {
+  border-radius: 10px;
+}
+/*.sciSocialMediaIconHoverEffects li a:hover.facebook {
+  background: #1877f2;
+}*/
+.sciSocialMediaIconHoverEffects .whatsapp {
+  background: #1ab394;
+}
+.sciSocialMediaIconHoverEffects .telegram {
+  background: #249ad7;
+}
+.sciSocialMediaIconHoverEffects .instagram {
+  background: #e4405f;
+}
+.sciSocialMediaIconHoverEffects li a:hover.whatsapp {
+  background: #1ab394;
+}
+.sciSocialMediaIconHoverEffects li a:hover.telegram {
+  background: #249ad7;
+}
+.sciSocialMediaIconHoverEffects li a:hover.instagram {
+  background: #e4405f;
+}
+.sciSocialMediaIconHoverEffects li a .fa {
+  transition: 0.25s;
+  pointer-events: none;
+}
+
+/*меняем цвет фона картинки при наведении с черного на белый*/
+.sciSocialMediaIconHoverEffects li a:hover .fa {
+  color: #fff;
+  transform: scale(1.75) translateZ(50px);
+}
+/*  конец Кнопок подвала соцсети */
+
+@media (max-width:420px) {
+  .socialMediaSocialMediaIconHoverEffects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+    transition: 0.5s;
+  }
+  .sciSocialMediaIconHoverEffects li a {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    /*background: #ccc;*/
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    border-radius: 10px;
+    text-decoration: none;
+    margin: 13px;
+    font-size: 3em;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    /*box-shadow: 0 25px 35px rgb(176 233 204 / 42%);*/
+    transition: background 0.25s;
+  }
+
+}
+
+/*  конец Кнопок подвала соцсети */
+
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.copyrightText {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  color: #666;
+  text-align: center;
+}
+.copyrightText a {
+  color: #fff;
+  text-decoration: none;
+}
+/*с карточки*/
+
+@media (max-width:991px) {
+  section {
+    padding: 10px;
+  }
+  .banner .content h2 {
+    font-size: 3.3em;
+  }
+  .banner .content h3 {
+    font-size: 1.1em;
+  }
+}
+@media (max-width:767px) {
+  section {
+    padding: 10px;
+}
+
+.banner .content h2 {
+    font-size: 1.5em;
+}
+.banner .content h3 {
+    font-size: 1.3em;
+}
+.banner .content p {
+    font-size: 0.8em;
+}
+.about {
+  flex-direction: column;
+}
+.about .contentBx,
+.about .imgBx {
+  margin-top: 20px;
+  min-width: 100%;
+  width: 100%;
+  text-align: center;
+  padding-right: 0px;
+}
+.about .imgBx {
+  min-height: 250px;
+}
+.btn {
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+.destination .destinationList {
+  margin-top: 25px;
+}
+.destination .destinationList .box {
+  position: relative;
+  max-width: 350px;
+  min-width: initial;
+  width: 350px;
+  height: 290px;
+  margin: 0px;
+  margin-top: 15px;
+}
+.destination .destinationList .box .imgBx {
+    height: 200px;
+}
+
+.footer .sci li a img {
+    max-width: 20px;
+}
+.copyrightText {
+    font-size: 10px;
+  }
+  .sidebar ul li a {
+    font-weight: 600;
+  }
+  .sidebar ul li {
+    margin: 20px;
+  }
+
+}
+@media (max-width: 360px) {
+  .banner .content h2 {
+      font-size: 1.3em;
+  }
+  .banner .content h3 {
+      font-size: 1.1em;
+      text-align: center;
+  }
+  .banner .content p {
+      font-size: 1em;
+  }
+  .sidebar ul li {
+    margin: 35px;
+  }
+}
+/* часы */
+#time {
+  display: flex;
+  gap: 1px;
+  color: #fff;
+  justify-content: center;
+}
+#time .circle {
+  position: relative;
+  width: 50px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#time .circle svg {
+  position: relative;
+  width: 50px;
+  height: 159px;
+  transform: rotate(271deg);
+}
+#time .circle svg circle {
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke: #191919;
+  stroke-width: 1;
+  transform: translate(5px, 5px);
+}
+#time .circle svg circle:nth-child(2) {
+  stroke: var(--clr);
+  stroke-dasharray: 129;
+
+  }
+#time div {
+  position: absolute;
+  text-align: center;
+  font-weight: 10;
+  font-size: 0.9em;
+}
+#time div span {
+  position: absolute;
+  transform: translateX(-50%) translateY(20px);
+  font-size: 0.35em;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+#time .ap {
+  position: relative;
+  font-size: : 0.5em;
+  transform: translateX(4px);
+}
+.dots {
+  position: absolute;
+  width: 50px;
+  height: 49px;
+  z-index: 10;
+  justify-content: center;
+}
+.dots::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  width: 3px;
+  height: 3px;
+  background: var(--clr);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--clr),
+  0 0 60px var(--clr);
+}
+/* бокс второго баннера  */
+.boxFit {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background: rgb(0 0 0 / 50%);
+}
+.boxFit:before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #fff;
+  z-index: -1;
+}
+.boxFit:after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #fff;
+  z-index: -2;
+  filter: blur(40px);
+}
+.boxFit:before,
+.boxFit:after {
+  background: linear-gradient(235deg, #89ff00, #060c21, #00bcd4);
+}
+.contentBoxFit {
+  padding: 20px;
+  box-sizing: border-box;
+  color: #fff;
+}
+.contentBoxFit h2 {
+  margin-bottom: 20px;
+}
+.about .contentBx .boxFit .contentBoxFit p {
+  margin-top: 10px;
+  text-align: right;
+}
+.contentBoxFit p {
+  margin-top: 10px;
+  text-align: center;
+}
+@media (max-width: 720px) {
+  .contentBoxFit p {
+    text-align: left;
+  }
+  .about .contentBx .boxFit .contentBoxFit p {
+    margin-top: 10px;
+    text-align: left;
+  }
+}
+/* Карточка второго баннера */
+
+.conteinerKreativeCardFitTwo {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.conteinerKreativeCardFitTwo .cardKreativeCardFitTwo {
+  position: relative;
+  height: 424px;
+  background: rgba(0 0 0 / 0%);
+  display: flex;
+  width: 98%;
+  margin: 30px 0;
+}
+.conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .imgBxKreativeCardFitTwo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(Freepngimg.png);
+  /**/background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: inline-block;/**/
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+}
+.conteinerKreativeCardFitTwo .cardKreativeCardFitTwo:hover .imgBxKreativeCardFitTwo {
+  width: 150px;
+  height: 150px;
+  left: -75px;
+  top: calc(50% - 75px);
+  transition: 0.5s ease-in-out;
+  /*background: #d30000;*/
+  background-image: url(Freepngimg.png);
+}
+.conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .imgBxKreativeCardFitTwo:before {
+  content: attr(data-text);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /*height: 100%;*/
+  text-align: center;
+  font-size: 6em;
+  color: rgb(0 0 0 / 0%);
+  font-size: 800;
+}
+.conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .imgBxKreativeCardFitTwo img {
+  max-width: 100px;
+  transition: 0.5s ease-in-out;
+}
+.conteinerKreativeCardFitTwo .cardKreativeCardFitTwo:hover .imgBxKreativeCardFitTwo img {
+  max-width: 75px;
+  transition: 0.5s ease-in-out;
+}
+.conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .contentKreativeCardFitTwo {
+  position: absolute;
+  right: 0;
+  width: calc(100% - 5px);
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .contentKreativeCardFitTwo h3 {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin-bottom: 5px;
+  font-size: 30px;
+  color: #fff;
+}
+.conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .contentKreativeCardFitTwo p {
+  color: #fff;
+  font-weight: 500;
+}
+.conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .contentKreativeCardFitTwo a {
+  /*display: inline-block;*/
+  /*margin-top: 10px;
+  padding: 10px 30px;
+  background: #333;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;*/
+  /*---------------*/
+  position: relative;
+  /*width: 160px;*/
+  height: 50px;
+  margin: 15px 160px;
+  background: rgb(255 255 255 / 0%);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .contentKreativeCardFitTwo a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #fe48fd;
+  transition: 0.5s ease-in-out;
+  transition-delay: 0.5s;
+}
+.conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .contentKreativeCardFitTwo a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 100%;
+  background: #fe48fd;
+  transition: 0.5s ease-in-out;
+  transition-delay: 0.5s;
+}
+/*.conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .contentKreativeCardFitTwo a:nth-child(2)::before,
+.conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .contentKreativeCardFitTwo a:nth-child(2)::after {
+  background: #fe1a6f;
+}*/
+.conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .contentKreativeCardFitTwo a:hover::before,
+.conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .contentKreativeCardFitTwo a:hover::after {
+  width: 50%;
+  transition-delay: 0s;
+}
+.conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .contentKreativeCardFitTwo a span {
+  position: absolute;
+  z-index: 1;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  transition: 0.5s;
+}
+.conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .contentKreativeCardFitTwo a span:nth-child(1) {
+  transition-delay:  0.75s;
+}
+.conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .contentKreativeCardFitTwo a:hover span:nth-child(1) {
+  transform: scale(0);
+  transition-delay: 0s;
+}
+.conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .contentKreativeCardFitTwo a span:nth-child(2) {
+  transform: scale(3);
+  opacity: 0;
+  color: #111;
+  transition-delay: 0s;
+}
+.conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .contentKreativeCardFitTwo a:hover span:nth-child(2) {
+  transform: scale(1);
+  transition-delay: 0s;
+  opacity: 1;
+  z-index: 10;
+  transition-delay: 0.5s;
+}
+
+@media (max-width: 991px) {
+  .conteinerKreativeCardFitTwo {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .conteinerKreativeCardFitTwo .cardKreativeCardFitTwo {
+    width: 400px;
+  }
+  .conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .imgBxKreativeCardFitTwo:before {
+    font-size: 1em;
+  }
+  .conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .contentKreativeCardFitTwo a {
+    height: 50px;
+    margin: 0 0;
+    margin-top: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .conteinerKreativeCardFitTwo .cardKreativeCardFitTwo {
+    max-width: 300px;
+    flex-direction: column;
+    height: auto;
+  }
+  .conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .imgBxKreativeCardFitTwo {
+    position: relative;
+  }
+  .conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .imgBxKreativeCardFitTwo:before {
+    font-size: 1em;
+  }
+  .conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .imgBxKreativeCardFitTwo,
+  .conteinerKreativeCardFitTwo .cardKreativeCardFitTwo:hover .imgBxKreativeCardFitTwo {
+    width: 100%;
+    height: 200px;
+    left: 0;
+  }
+  .conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .imgBxKreativeCardFitTwo img,
+  .conteinerKreativeCardFitTwo .cardKreativeCardFitTwo:hover .imgBxKreativeCardFitTwo img {
+    max-width: 100px;
+  }
+  .conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .contentKreativeCardFitTwo {
+    position: relative;
+    width: 100%;
+  }
+  .conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .contentKreativeCardFitTwo a {
+    height: 50px;
+    margin: 0 10px;
+    margin-top: 30px;
+  }
+}
+@media (max-width: 420px) {
+  .conteinerKreativeCardFitTwo .cardKreativeCardFitTwo .contentKreativeCardFitTwo {
+    padding: 0px;
+  }
+  .conteinerKreativeCardFitTwo .cardKreativeCardFitTwo {
+    margin: 0 0;
+  }
+}
+
+/* конец карточки второго баннера  */
+
+
+
+/* 3D card */
+}
+.container3DCard {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 0;
+  transform-style: preserve-3d;
+}
+.container3DCard .box3DCard {
+  position: relative;
+  width: 1000px;
+  height: 600px;
+  margin: 20px 20px;
+  background: #000;
+  background: #000;
+  transform-style: preserve-3d;
+}
+.container3DCard .box3DCard:hover {
+  box-shadow: 0 50px 80px rgba(0, 0, 0, .1);
+}
+.container3DCard .box3DCard .imgBX3DCard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background-image: url(ClubFit7.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+}
+
+.container3DCard .box3DCard .contentBX3DCard {
+  position: absolute;
+  color: #fff;                        /* rgb(255 255 255 / 0%); */
+  top: 5%;
+  left: 50px;
+  right: 50px;
+  background: rgb(255 255 255 / 0%);
+  transform: translateZ(20px) scale(0);
+  padding: 40px 25px;
+  transform-origin: top;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  background-image: url(ClubFit7.png);
+  background-size: cover;
+  height: 550px;
+}
+
+.container3DCard .box3DCard:hover .contentBX3DCard {
+  transform: translateZ(50px) scale(1);
+}
+@media (max-width: 991px) {
+  .container3DCard .box3DCard {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  }
+}
+@media (max-width: 747px) {
+   .container3DCard {
+    padding: 10px 10px;
+  }
+  .container3DCard .box3DCard {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 520px;
+    height: 250px;
+    margin: 20px 20px;
+  }
+   .container3DCard .box3DCard .contentBX3DCard {
+    top: 50%;
+    padding: 5px 5px;
+    left: 15px;
+    right: 15px;
+    background-image: url(ClubFit3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    height: 450px;
+  }
+   .container3DCard .box3DCard .imgBX3DCard {
+    background-image: url(PlayClub.png);
+  }
+}
+
+@media (max-width: 420px) {
+   .container3DCard {
+    padding: 10px 10px;
+    margin-bottom: 40px;
+    margin-top: 0;
+  }
+  .container3DCard .box3DCard {
+    position: relative;
+    width: 320px;
+    /*height: 600px;*/
+    margin: 1px 1px;
+  }
+   .container3DCard .box3DCard .imgBX3DCard {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 290px;
+    height: 250px;
+    margin-left: : 105px;
+    /*текст первой карточки*/
+    color: hsl(0deg 0% 100% / 0%);
+  }
+ .container3DCard .box3DCard .contentBX3DCard {
+    top: 50%;
+    color: rgb(255 255 255 / 0%);
+    padding: 5px 5px;
+    left: 10px;
+    right: 10px;
+    background-image: url(ClubFit3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    height: 550px;
+  }
+   .container3DCard .box3DCard .imgBX3DCard {
+    background-image: url(PlayClub.png);
+    background-size: cover;
+  }
+}
+/* end 3D card  */
+
+/* карточка гарантии**/
+.conteinerGradientGlassmorphismCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 40px 0;
+}
+.conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard {
+  position: relative;
+  width: 320px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 30px;
+  transition: 0.5s;
+}
+.conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  border-radius: 8px;
+  transform: skewX(15deg);
+  transition: 0.5s;
+}
+.conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  border-radius: 8px;
+  transform: skewX(15deg);
+  transition: 0.5s;
+  filter: blur(30px);
+  transition: 0.5s;
+}
+.conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard:hover:before,
+.conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard:hover:after {
+  transform: skewX(0deg);
+  left: 20px;
+  width: calc(100% - 90px);
+}
+.conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard:nth-child(1):before,
+.conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard:nth-child(1):after {
+  background: linear-gradient(315deg, #ffbc00, #ff0058);
+}
+/*.conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard:nth-child(2):before,
+.conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard:nth-child(2):after {
+  background: linear-gradient(315deg, #03a9f4, #ff0058);
+}*/
+/*.conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard:nth-child(3):before,
+.conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard:nth-child(3):after {
+  background: linear-gradient(315deg, #4dff03, #00d0ff);
+}
+*/
+.conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard span {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+.conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard span::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.5s;
+  animation: animateGradientGlassmorphismCard 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+.conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard:hover span::before {
+  top: -50px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+}
+.conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard span::after {
+  content: '';
+  position: absolute;
+  bottom: : 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  /*background: rgba(255, 255, 255, 0.1);*/
+  background-image: url(moneybackguarantee.png);
+  background-position: center;
+  display: inline-block;
+  background-size: cover;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.5s;
+  animation: animateGradientGlassmorphismCard 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  animation-delay: -1s;
+}
+.conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard:hover span::after {
+  bottom: -50px;
+  right: 50px;
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+}
+@keyframes animateGradientGlassmorphismCard {
+  0%, 100%{
+    transform: translateY(10px);
+  }
+  50%
+  {
+    transform: translateY(-10px);
+  }
+}
+.conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard .contentGradientGlassmorphismCard {
+  position: relative;
+  left: 0;
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  transition: 0.5s;
+  color: #fff;
+}
+.conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard:hover .contentGradientGlassmorphismCard {
+  left: -25px;
+  padding: 60px 40px;
+}
+.conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard .contentGradientGlassmorphismCard h2 {
+  font-style: 2em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard .contentGradientGlassmorphismCard p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  line-height: 1.4em;
+  text-align: left;
+}
+.conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard .contentGradientGlassmorphismCard a {
+  display: inline-block;
+  font-size: 1.1em;
+  color: #111;
+  background: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 5px;
+}
+@media (max-width: 420px) {
+  .conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard {
+    position: relative;
+    width: 350px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 45px 10px;
+    transition: 0.5s;
+  }
+  .conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard:hover .contentGradientGlassmorphismCard {
+    left: 1px;
+    padding: 60px 40px;
+  }
+}
+/* конец карточки гарантии */
+
+
+
+/* карточка гарантии**/
+.conteinerGradientGlassmorphismCard1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 40px 0;
+}
+.conteinerGradientGlassmorphismCard1 .boxGradientGlassmorphismCard1 {
+  position: relative;
+  width: 320px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 30px;
+  transition: 0.5s;
+}
+.conteinerGradientGlassmorphismCard1 .boxGradientGlassmorphismCard1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  border-radius: 8px;
+  transform: skewX(-15deg);
+  transition: 0.5s;
+}
+.conteinerGradientGlassmorphismCard1 .boxGradientGlassmorphismCard1::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  border-radius: 8px;
+  transform: skewX(-15deg);
+  transition: 0.5s;
+  filter: blur(30px);
+  transition: 0.5s;
+}
+.conteinerGradientGlassmorphismCard1 .boxGradientGlassmorphismCard1:hover:before,
+.conteinerGradientGlassmorphismCard1 .boxGradientGlassmorphismCard1:hover:after {
+  transform: skewX(0deg);
+  left: 20px;
+  width: calc(100% - 90px);
+}
+.conteinerGradientGlassmorphismCard1 .boxGradientGlassmorphismCard1:nth-child(1):before,
+.conteinerGradientGlassmorphismCard1 .boxGradientGlassmorphismCard1:nth-child(1):after {
+  background: linear-gradient(315deg, #03a9f4, #4dff03);
+}
+/*.conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard:nth-child(2):before,
+.conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard:nth-child(2):after {
+  background: linear-gradient(315deg, #03a9f4, #ff0058);
+}*/
+/*.conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard:nth-child(3):before,
+.conteinerGradientGlassmorphismCard .boxGradientGlassmorphismCard:nth-child(3):after {
+  background: linear-gradient(315deg, #4dff03, #00d0ff);
+}
+*/
+.conteinerGradientGlassmorphismCard1 .boxGradientGlassmorphismCard1 span {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+.conteinerGradientGlassmorphismCard1 .boxGradientGlassmorphismCard1 span::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.5s;
+  animation: animateGradientGlassmorphismCard 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+.conteinerGradientGlassmorphismCard1 .boxGradientGlassmorphismCard1:hover span::before {
+  top: -50px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+}
+.conteinerGradientGlassmorphismCard1 .boxGradientGlassmorphismCard1 span::after {
+  content: '';
+  position: absolute;
+  bottom: : 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  /*background: rgba(255, 255, 255, 0.1);*/
+  background-image: url(moneybackguarantee.png);
+  background-position: center;
+  display: inline-block;
+  background-size: cover;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.5s;
+  animation: animateGradientGlassmorphismCard1 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  animation-delay: -1s;
+}
+.conteinerGradientGlassmorphismCard1 .boxGradientGlassmorphismCard1:hover span::after {
+  bottom: -50px;
+  right: 50px;
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+}
+@keyframes animateGradientGlassmorphismCard1 {
+  0%, 100%{
+    transform: translateY(10px);
+  }
+  50%
+  {
+    transform: translateY(-10px);
+  }
+}
+.conteinerGradientGlassmorphismCard1 .boxGradientGlassmorphismCard1 .contentGradientGlassmorphismCard1 {
+  position: relative;
+  left: 0;
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  transition: 0.5s;
+  color: #fff;
+}
+.conteinerGradientGlassmorphismCard1 .boxGradientGlassmorphismCard1:hover .contentGradientGlassmorphismCard1 {
+  left: -25px;
+  padding: 60px 40px;
+}
+.conteinerGradientGlassmorphismCard1 .boxGradientGlassmorphismCard1 .contentGradientGlassmorphismCard1 h2 {
+  font-style: 2em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.conteinerGradientGlassmorphismCard1 .boxGradientGlassmorphismCard1 .contentGradientGlassmorphismCard1 p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  line-height: 1.4em;
+  text-align: left;
+}
+.conteinerGradientGlassmorphismCard1 .boxGradientGlassmorphismCard1 .contentGradientGlassmorphismCard1 a {
+  display: inline-block;
+  font-size: 1.1em;
+  color: #111;
+  background: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 5px;
+}
+@media (max-width: 420px) {
+  .conteinerGradientGlassmorphismCard1 .boxGradientGlassmorphismCard1 {
+    position: relative;
+    width: 350px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 45px 10px;
+    transition: 0.5s;
+  }
+  .conteinerGradientGlassmorphismCard1 .boxGradientGlassmorphismCard1:hover .contentGradientGlassmorphismCard1 {
+    left: 1px;
+    padding: 60px 40px;
+  }
+}
+/* конец карточки гарантии */
+
+/* slider card */
+.containerHoverEffectsCardResponsive {
+  position: relative;
+  /*width: 1100px;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px;
+}
+.containerHoverEffectsCardResponsive .cardHoverEffectsCardResponsive {
+  position: relative;
+  max-width: 500px;
+  height: 320px;
+  background: #030303;
+  margin: 30px 10px;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+}
+.containerHoverEffectsCardResponsive .cardHoverEffectsCardResponsive:hover {
+  height: 650px;
+
+}
+.containerHoverEffectsCardResponsive .cardHoverEffectsCardResponsive .imgBxHoverEffectsCardResponsive {
+  position: relative;
+  width: 350px;
+  height: 320px;
+  justify-content: center;
+  align-items: center;
+  background-image: url(pngegg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  top: -60px;
+  /*left: -70px;*/
+  z-index: 1;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+.containerHoverEffectsCardResponsive .cardHoverEffectsCardResponsive .imgBxHoverEffectsCardResponsive img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+.containerHoverEffectsCardResponsive .cardHoverEffectsCardResponsive .contentHoverEffectsCardResponsive h2 {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  top: 25px;
+  /*left: 12%;*/
+  padding-bottom: 20px;
+  font-size: 5em;
+  font-weight: 700;
+}
+.containerHoverEffectsCardResponsive .cardHoverEffectsCardResponsive .contentHoverEffectsCardResponsive p {
+  color: #babbbf;
+  font-size: 1.3em;
+  font-weight: 700;
+}
+.containerHoverEffectsCardResponsive .cardHoverEffectsCardResponsive .contentHoverEffectsCardResponsive {
+  position: relative;
+  margin-top: -150px;
+  padding: 10px 15px;
+  text-align: center;
+  color: #e1dee0;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+.containerHoverEffectsCardResponsive .cardHoverEffectsCardResponsive:hover .contentHoverEffectsCardResponsive {
+  visibility: visible;
+  opacity: 1;
+  margin-top: -110px;
+  transition-delay: 0.3s;
+}
+@media (max-width: 420px) {
+  .containerHoverEffectsCardResponsive .cardHoverEffectsCardResponsive {
+    position: relative;
+    max-width: 360px;
+    height: 300px;
+    background: rgb(255 255 255 / 0%);
+    margin: 1px 1px;
+
+  }
+  .containerHoverEffectsCardResponsive .cardHoverEffectsCardResponsive .imgBxHoverEffectsCardResponsive {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 200px;
+    background-image: url(pngegg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    top: -30px;
+    left: -30px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  }
+  .containerHoverEffectsCardResponsive .cardHoverEffectsCardResponsive .contentHoverEffectsCardResponsive h2 {
+    color: #babbbf;
+    font-size: 36px;
+    font-weight: 700;
+
+  }
+  .containerHoverEffectsCardResponsive .cardHoverEffectsCardResponsive .contentHoverEffectsCardResponsive p {
+    color: #babbbf;
+    font-size: 1.3em;
+    font-weight: 700;
+  }
+  .containerHoverEffectsCardResponsive .cardHoverEffectsCardResponsive:hover {
+    height: 560px;
+  }
+  .containerHoverEffectsCardResponsive .cardHoverEffectsCardResponsive:hover .contentHoverEffectsCardResponsive {
+    margin-top: -70px;
+  }
+}
+/*.blob {
+  width: 800px;
+  height: 500px;
+}*/
+.contentBoxFit-1 {
+  padding: 20px;
+  box-sizing: border-box;
+  color: #fff;
+}
+.contentBoxFit-1 h2 {
+  position: absolute;
+  margin-left: 50%;
+  top: 20px;
+}
+.contentBoxFit-1 p {
+  position: absolute;
+  top: 50px;
+  margin: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: right;
+  margin-top: 20px;
+}
+.btn-1 {
+    position: relative;
+    display: inline-block;
+    margin-top: -30px;
+    padding: 10px 30px;
+    color: #fe48fd;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 20px 50px rgb(0 0 0 / 50%);
+    overflow: hidden;
+}
+/*.contentFit-1 .btn {
+  position: absolute;
+  top: 90px;
+  margin-bottom: 1px;
+}*/
+.blob:nth-child(2) {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  filter: blur(50px);
+}

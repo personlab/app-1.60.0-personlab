@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+body {
+  background: #030303;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+section {
+  position: relative;
+  padding: 30px;
+}
+header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  transition: 0.5s;
+}
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  background: #ff4020;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+.containerImageReflectionEffect {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.containerImageReflectionEffect img {
+   max-width: 340px;
+   margin: 30px;
+   transform: perspective(800px) rotateY(20deg);
+   transition: 0.5s;
+   -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0004);
+}
+.containerImageReflectionEffect:hover img {
+  opacity: 0.1;
+}
+.containerImageReflectionEffect img:hover {
+  transform: perspective(800px) rotateY(0deg);
+  transform: scale(2.2);
+  opacity: 1;
+}
+@media (max-width: 420px) {
+  .containerImageReflectionEffect {
+    flex-direction: column;
+  }
+  .containerImageReflectionEffect img {
+     margin: 0;
+     margin-top: 30px;
+   }
+}
+/**/
+.destination {
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.destination:hover {
+  opacity: 1;
+}
+/**/
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+.copyrightText {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  text-align: center;
+}
+/* часы */
+#time {
+  display: flex;;
+  gap: 10px;
+  justify-content: center;
+  color: #fff;
+}
+
+@media (max-width:767px) {
+  section {
+    padding: 10px;
+}
+.destination {
+  margin-top: 25px;
+}
+.copyrightText {
+    font-size: 12px;
+  }
+  .containerImageReflectionEffect img:hover {
+    transform: scale(1);
+  }
+  .footer {
+    margin-top: 40px;
+  }
+}

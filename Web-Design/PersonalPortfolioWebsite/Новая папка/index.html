@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
+  <link rel="stylesheet" href="fitness.css">
+  <!-- <link rel="stylesheet" href="kreativeCardFit.css"> -->
+  <title>Fitness</title>
+</head>
+<body>
+  <section class="header">
+    <a href="#" class="logo"><h2 data-text="FitnessClub">FitnessClub</h2></a>
+    <div class="toggle" onclick="toggleMenu();"></div>
+
+    <div class="sidebar">
+      <ul class="menu">
+          <li><a target = "_blank" href="https://shopmaster.info/" data-text="Главная">Главная</a></li>
+          <li><a target = "_blank" href="https://shopmaster.info/product-category/fitness-courses-top/" data-text="Магазин">Магазин</a></li>
+          <li><a target = "_blank" href="#" data-text="Контакты">Контакты</a></li>
+      </ul>
+    </div>
+
+    <script>
+      function toggleMenu() {
+        const menuToggle = document.querySelector('.toggle');
+        const sidebar = document.querySelector('.sidebar');
+        menuToggle.classList.toggle('active');
+        sidebar.classList.toggle('active');
+      }
+    </script>
+  </section>
+
+  <section class="banner">
+    <img src="1.png" class="fitBg">
+
+<div class="content">
+  <div class="lightbarNeonText"></div>
+  <div class="topLayerNeonText"></div>
+      <h2>
+      <span>О</span>
+      <span>г</span>
+      <span>н</span>
+      <span>е</span>
+      <span>н</span>
+      <span>н</span>
+      <span>а</span>
+      <span>я&nbsp&nbsp</span>
+      <span>т</span>
+      <span>р</span>
+      <span>е</span>
+      <span>н</span>
+      <span>и</span>
+      <span>р</span>
+      <span>о</span>
+      <span>в</span>
+      <span>к</span>
+      <span>а</span>
+    </h2>
+      <h3 data-text="для привлекательных форм">
+        <span>д</span>
+        <span>л</span>
+        <span>я</span><br>
+        <span>п</span>
+        <span>р</span>
+        <span>и</span>
+        <span>в</span>
+        <span>л</span>
+        <span>е</span>
+        <span>к</span>
+        <span>а</span>
+        <span>т</span>
+        <span>е</span>
+        <span>л</span>
+        <span>ь</span>
+        <span>н</span>
+        <span>ы</span>
+        <span>х&nbsp&nbsp</span>
+        <span>ф</span>
+        <span>о</span>
+        <span>р</span>
+        <span>м</span>
+      </h3>
+
+
+
+
+            <div class="cardFit">
+             <div class="circleFit" style="--clr:rgba(0 0 0 / 75%)">
+               <img src="fitness-mantra-right-food-and-right-workout.png" class="logoFit">
+                </div>
+                 <div class="contentFit">
+                  <h3>Мы предлагаем:</h3>
+                  <p>✓ эффективные и короткие домашние видео-тренировки на ВСЕ группы мышц</p>
+                  <p>✓ Вкуснейшее меню на каждый день (никакой экзотики)</p>
+                  <p>✓ Консультация врача – реабилитолога, поддержка, мотивация</p>
+                  <p>✓ Доступ к материалу остается НАВСЕГДА</p>
+                    <a href="#about" class="btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Узнать больше
+                  </a>
+
+                  <div id="time">
+                   <div class="circle" style="--clr: #ff2972">
+                     <div class="dots hr_dot"></div>
+                     <svg>
+                       <circle cx="20" cy="74" r="20"></circle>
+                       <circle cx="20" cy="74" r="20" id="hh"></circle>
+                     </svg>
+                     <div id="hours">00</div>
+                  </div>
+                  <div class="circle"  style="--clr: #fee800">
+                    <div class="dots min_dot"></div>
+                    <svg>
+                      <circle cx="20" cy="74" r="20"></circle>
+                      <circle cx="20" cy="74" r="20" id="mm"></circle>
+                    </svg>
+                    <div id="minutes">00</div>
+                  </div>
+                  <div class="circle"  style="--clr: #04fc43">
+                    <div class="dots sec_dot"></div>
+                    <svg>
+                      <circle cx="20" cy="74" r="20"></circle>
+                      <circle cx="20" cy="74" r="20" id="ss"></circle>
+                    </svg>
+                    <div id="seconds">00</div>
+                  </div>
+                  <div class="ap">
+                    <div id="ampm">AM</div>
+                    </div>
+                  </div>
+
+                  <script>
+                  setInterval(() =>{
+                    let hours = document.getElementById('hours');
+                    let minutes = document.getElementById('minutes');
+                    let seconds = document.getElementById('seconds');
+                    let ampm = document.getElementById('ampm');
+
+                    let hh = document.getElementById('hh');
+                    let mm = document.getElementById('mm');
+                    let ss = document.getElementById('ss');
+
+                    let hr_dot = document.querySelector('.hr_dot');
+                    let min_dot = document.querySelector('.min_dot');
+                    let sec_dot = document.querySelector('.sec_dot');
+
+                    let h = new Date().getHours();
+                    let m = new Date().getMinutes();
+                    let s = new Date().getSeconds();
+                    let am = h >= 12 ? "PM" : "AM";
+
+                    //convert 24hr clock to 12hr Clock
+                    if (h > 12){
+                      h = h - 12;
+                    }
+
+                    //подставляем ноль к числу
+                    h = (h < 10) ? "0" + h : h;
+                    m = (m < 10) ? "0" + m : m;
+                    s = (s < 10) ? "0" + s : s;
+
+                    hours.innerHTML = h + "<br><span>Hours</span>";
+                    minutes.innerHTML = m + "<br><span>Minutes</span>";;
+                    seconds.innerHTML = s + "<br><span>Seconds</span>";;
+                    ampm.innerHTML = am;
+
+                    hh.style.strokeDashoffset = 130 - (130 * h) / 12;
+                    // заполнение круга  часы
+                    mm.style.strokeDashoffset = 130 - (130 * m) / 60;
+                   // минуты
+                    ss.style.strokeDashoffset = 130 - (130 * s) / 60;
+                   // секунды
+
+                    hr_dot.style.transform = `rotate(${h * 30}deg)`;
+                    //360 / 12 = 30
+                    min_dot.style.transform = `rotate(${m * 6}deg)`;
+                    //360 / 60 = 6
+                    sec_dot.style.transform = `rotate(${s * 6}deg)`;
+
+                    })
+                  </script>
+
+            </div>
+            <img src="ClubFit8.png" class="produkt_fit">
+          </div>
+
+    </div>
+  </section>
+
+<section class="about" id="about">
+        <div class="contentBx">
+          <div class="boxFit">
+            <div class="contentBoxFit">
+              <h2>Для Кого Подходит:</h2>
+              <p>✓ Кто хочет не просто похудеть, но и создать красивые контуры тела<br>
+                ✓ Не тратить деньги на абонемент в fitness зал который не будет использован<br>
+                ✓ Работаете на удалёнке, и короткие упражнения необходимы для восстановления тонуса мышц и
+                психоэмоциональной разрядки<br>
+                ✓ Хочет заниматься в удобное время Беременным и мамам на ГВ, если не с кем оставить малыша<br>
+                ✓ Давно ищете эффективный комплекс по доступной цене в сочетании с простым и вкусным меню</p>
+                 <a href="#banner4" class="btn">
+                   <span></span>
+                   <span></span>
+                   <span></span>
+                   <span></span>
+                   Узнать больше
+                 </a>
+            </div>
+          </div>
+        </div>
+       <div class="imgBx">
+
+         <div class="conteinerKreativeCardFitTwo">
+           <div class="cardKreativeCardFitTwo">
+             <div class="imgBxKreativeCardFitTwo" data-text="Бесплатно">
+               <img src="startup.png" alt="">
+             </div>
+             <div class="contentKreativeCardFitTwo">
+               <div>
+                 <h3>Бесплатно</h3>
+                 <p>ПРОБНАЯ ВЕРСИЯ ВИДЕО ТРЕНИРОВОК + ПИТАНИЕ НА 4 ДНЯ</p>
+                 <h2>Она содержит:</h2>
+                 <p>⭐️ Подробную вкусную диету из доступных продуктов ближайшего вам магазина.
+                 <p>⭐️ Эффективные упражнения на пресс, ягодицы и бедра (убираем "ушки") по 5 упражнений на каждую зону.</p>
+                 <a href="https://shopmaster.info/wp-content/uploads/2021/12/besplatniy_courses.rar">
+                   <span>Скачать</span>
+                   <span>Бесплатно</span>
+                 </a>
+                 <!-- <a href="#">
+                   <span>Click here</span>
+                   <span>Click here</span>
+                 </a>  -->
+               </div>
+             </div>
+           </div>
+         </div>
+
+   </div>
+</section>
+
+<section class="about" id="about">
+        <div class="contentBx">
+          <div class="boxFit">
+            <div class="blob">
+               <svg viewBox="0 0 900 500" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
+                 <g transform="translate(172.63945960998535, 22.618581771850586)">
+                   <defs>
+                     <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                       <stop offset="0%" style="stop-color: rgb(238, 205, 163);"></stop>
+                       <stop offset="100%" style="stop-color: rgb(239, 98, 159);"></stop>
+                     </linearGradient>
+                   </defs>
+
+
+                   <path fill="url(#gradient)">
+                     <animate attributeName ="d"
+                       dur = "10000ms"
+                       repeatCount = "indefinite"
+
+                     values = "M451.5,301.5Q429,353,398,403Q367,453,308.5,472Q250,491,201.5,454.5Q153,418,94,396Q35,374,42,312Q49,250,70,204Q91,158,112,103Q133,48,191.5,39Q250,30,312.5,32Q375,34,393.5,95Q412,156,443,203Q474,250,451.5,301.5Z;
+                     M436.5,297.5Q414,345,384,387Q354,429,302,456.5Q250,484,195,462.5Q140,441,118.5,389.5Q97,338,64.5,294Q32,250,46,195.5Q60,141,107.5,113Q155,85,202.5,75.5Q250,66,310.5,53.5Q371,41,412,87Q453,133,456,191.5Q459,250,436.5,297.5Z;
+                     M442,302.5Q433,355,393,391.5Q353,428,301.5,447Q250,466,197,450Q144,434,111,391.5Q78,349,72,299.5Q66,250,62.5,195Q59,140,109,116Q159,92,204.5,63Q250,34,294,65.5Q338,97,397.5,114Q457,131,454,190.5Q451,250,442,302.5Z;
+                     M443.5,295Q407,340,390,401.5Q373,463,311.5,468Q250,473,196,455Q142,437,99,399.5Q56,362,46,306Q36,250,59,201.5Q82,153,105,95.5Q128,38,189,43.5Q250,49,308.5,48Q367,47,415,87Q463,127,471.5,188.5Q480,250,443.5,295Z;
+                     M475.5,310.5Q460,371,413,411Q366,451,308,470.5Q250,490,197.5,460.5Q145,431,100.5,396.5Q56,362,60.5,306Q65,250,73,201.5Q81,153,107,100Q133,47,191.5,51.5Q250,56,295,75.5Q340,95,374.5,126.5Q409,158,450,204Q491,250,475.5,310.5Z;
+                     M471.5,306.5Q446,363,404.5,404.5Q363,446,306.5,438Q250,430,204,420Q158,410,119.5,378.5Q81,347,60,298.5Q39,250,54.5,198Q70,146,107,106.5Q144,67,197,43Q250,19,299,49.5Q348,80,395,109.5Q442,139,469.5,194.5Q497,250,471.5,306.5Z;
+                     M455,308Q450,366,409.5,411Q369,456,309.5,441Q250,426,202.5,420Q155,414,98.5,392Q42,370,26.5,310Q11,250,42,199Q73,148,106,103Q139,58,194.5,35.5Q250,13,308,31Q366,49,400,96.5Q434,144,447,197Q460,250,455,308Z;
+                     M455.5,304Q437,358,398,398Q359,438,304.5,443.5Q250,449,194.5,445.5Q139,442,89,407Q39,372,38,311Q37,250,63,203.5Q89,157,119.5,117Q150,77,200,63Q250,49,301.5,60.5Q353,72,406,100.5Q459,129,466.5,189.5Q474,250,455.5,304Z;
+                     M431.5,294Q402,338,387,399.5Q372,461,311,477Q250,493,199.5,459Q149,425,100.5,394.5Q52,364,38.5,307Q25,250,37.5,192.5Q50,135,98.5,103.5Q147,72,198.5,48.5Q250,25,304,44Q358,63,387.5,108.5Q417,154,439,202Q461,250,431.5,294Z;
+                     M460,310.5Q459,371,401,391Q343,411,296.5,435.5Q250,460,187.5,463Q125,466,86.5,416.5Q48,367,42,308.5Q36,250,44,193Q52,136,91,89Q130,42,190,24Q250,6,296,48Q342,90,388.5,116.5Q435,143,448,196.5Q461,250,460,310.5Z;
+                     M451.5,301.5Q429,353,398,403Q367,453,308.5,472Q250,491,201.5,454.5Q153,418,94,396Q35,374,42,312Q49,250,70,204Q91,158,112,103Q133,48,191.5,39Q250,30,312.5,32Q375,34,393.5,95Q412,156,443,203Q474,250,451.5,301.5Z">
+
+                    <!-- Add 1st and last value same for loop animation -->
+                     </animate>
+                   </path>
+                 </g>
+               </svg>
+
+               <div class="contentBoxFit-1">
+
+                 <h2>Для Кого Подходит:</h2>
+                 <p>✓ Кто хочет не просто похудеть, но и создать красивые контуры тела<br>
+                   ✓ Не тратить деньги на абонемент в fitness зал который не будет использован<br>
+                   ✓ Работаете на удалёнке, и короткие упражнения необходимы для восстановления тонуса мышц и
+                   психоэмоциональной разрядки<br>
+                   ✓ Хочет заниматься в удобное время Беременным и мамам на ГВ, если не с кем оставить малыша<br>
+                   ✓ Давно ищете эффективный комплекс по доступной цене в сочетании с простым и вкусным меню</p>
+                    <a href="#banner4" class="btn-1">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      Узнать больше
+                    </a>
+
+               </div>
+            </div>
+
+            <!-- -->
+          </div>
+        </div>
+       <div class="imgBx">
+
+         <div class="conteinerKreativeCardFitTwo">
+           <div class="cardKreativeCardFitTwo">
+             <div class="imgBxKreativeCardFitTwo" data-text="Бесплатно">
+               <img src="startup.png" alt="">
+             </div>
+             <div class="contentKreativeCardFitTwo">
+               <div>
+                 <h3>Бесплатно</h3>
+                 <p>ПРОБНАЯ ВЕРСИЯ ВИДЕО ТРЕНИРОВОК + ПИТАНИЕ НА 4 ДНЯ</p>
+                 <h2>Она содержит:</h2>
+                 <p>⭐️ Подробную вкусную диету из доступных продуктов ближайшего вам магазина.
+                 <p>⭐️ Эффективные упражнения на пресс, ягодицы и бедра (убираем "ушки") по 5 упражнений на каждую зону.</p>
+                 <a href="https://shopmaster.info/wp-content/uploads/2021/12/besplatniy_courses.rar">
+                   <span>Скачать</span>
+                   <span>Бесплатно</span>
+                 </a>
+                 <!-- <a href="#">
+                   <span>Click here</span>
+                   <span>Click here</span>
+                 </a>  -->
+               </div>
+             </div>
+           </div>
+         </div>
+
+   </div>
+</section>
+
+
+<section class="banner4" id="banner4">
+    <!-- <img src="fitnessfon_krasivoe_telo_shopmaster.png" class="fitBg" /> -->
+
+
+    <div class="conteinerCardFitkreative">
+      <div class="CardsFitkreative">
+        <div class="imgBxCardFitkreative">
+          <div>
+          <img src="survey-results.png" width="300px">
+          <h2>Результат</h2>
+          </div>
+        </div>
+        <div class="overlaykretiveCardFit"></div>
+        <div class="contentCardFitkreative">
+          <h2>Ваши результаты через 30 дней</h2><br>
+          <p>⭐️Снижение веса на 5 – 8 кг (возможно до 12 кг)</p>
+          <p>⭐️Увеличение тонуса мышц и легкость движений</p>
+          <p>⭐️Повышение стрессоустойчивости</p>
+          <p>⭐️Уверенность в себе, подкрепляемое комплиментами и интересом со стороны противоположного пола</p>
+          <p>⭐️Укрепление семейных отношений вследствие увеличения вашей привлекательности и повышения либидо</p>
+          <p>⭐️Нормализация показателей здоровья, укрепление иммунитета</p>
+        </div>
+      </div>
+
+
+        <div class="CardsFitkreative">
+          <div class="imgBxCardFitkreative">
+            <div>
+            <img src="online-course.png" width="300px">
+            <h2>Курс</h2>
+            </div>
+          </div>
+          <div class="overlaykretiveCardFit"></div>
+          <div class="contentCardFitkreative">
+            <h2>Содержание полного курса</h2><br>
+                <p>⭐️ Меню ПП на 30 дней, от которого худеют даже без тренировок</p>
+                <p>⭐️ Видео тренировки:</p>
+                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&#9989;все проблемные зоны</p>
+                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&#9989;кардио</p>
+                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&#9989;раcтяжка</p>
+                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&#9989;комплекс для беременных и мам на ГВ</p>
+                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&#9989;топ 5 упражнений для спины, пресса и ягодиц</p>
+                <p>⭐️ +1 из 3-х подарков на выбор</p>
+          </div>
+        </div>
+
+
+                <div class="CardsFitkreative">
+                  <div class="imgBxCardFitkreative">
+                    <div>
+                    <img src="heart.png" width="300px">
+                    <h2>Подарок</h2>
+                    </div>
+                  </div>
+                  <div class="overlaykretiveCardFit"></div>
+                  <div class="contentCardFitkreative">
+                    <h2>Приобретите полный курс и получите 1 из 3-х ПОДАРКОВ</h2><br><br>
+                       <p>1."О ГОРМОНАХ" КАКИЕ СБОИ В ГОРМОНАЛЬНОЙ СИСТЕМЕ ПРИВОДЯТ К НАБОРУ ВЕСА И КАК ИХ УСТРАНИТЬ.</p><br>
+                        <p>2."ТИПЫ ТЕЛОСЛОЖЕНИЯ" МЕТОДЫ КОРРЕКЦИИ С ПОМОЩЬЮ ПИТАНИЯ.</p><br>
+                        <p>3."МИФЫ ПРО ПОХУДЕНИЕ" НА ЧТО НЕ СТОИТ ТРАТИТЬ СИЛЫ, ВРЕМЯ И ДЕНЬГИ</p>
+                  </div>
+                </div>
+      </div>
+</section>
+
+<section class="banner4">
+  <div class="container3DCard">
+    <div class="box3DCard">
+      <div class="imgBX3DCard">
+        <img src="" alt="">
+        <h2>Один из лучших моментов в жизни<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspкогда ты понимаешь,</h2>
+      </div>
+      <div class="contentBX3DCard">
+        <br>
+        <h2>что две недели назад<br>&nbsp&nbsp&nbspтвое тело не могло<br>&nbsp&nbsp&nbsp&nbsp&nbspэтого сделать.</h2>
+        <p></p>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="vanilla-tilt.js"></script>
+  <script type="text/javascript">
+      VanillaTilt.init(document.querySelectorAll(".box3DCard"), {
+        max: 25,
+        speed: 400
+      });
+
+  </script>
+</section>
+
+
+    <section class="destination" id="destination">
+          <div class="conteinerGradientGlassmorphismCard">
+            <div class="boxGradientGlassmorphismCard">
+              <span></span>
+              <div class="contentGradientGlassmorphismCard">
+
+                <h2>Наши гарантии</h2>
+                   <p>⭐️ Возврат денежных средств, если курс вам не понравится<br>
+                   ⭐️ Гарантированное снижение веса в среднем на 5-8 кг через 30 дней<br>
+                   ⭐️ Сертификаты диетолога и фитнес тренера</p>
+
+              </div>
+            </div>
+       </div>
+
+  <!--<div class="destinationList">-->
+
+        <div class="containerImageReflectionEffect">
+          <img src="сертификатруслана2.jpg">
+          <img src="сертификатруслана3.jpg">
+          <img src="photo1640468033.jpeg">
+        </div>
+
+         <!--<div class="box">
+          <div class="imgBx">
+            <img src="сертификатруслана2.jpg" class="fitBg" />
+          </div>
+          <div class="content">
+            <h2>Fitness One<br><span>Fitness name</span></h2>
+          </div>
+        </div>
+        <div class="box">
+          <div class="imgBx">
+            <img src="сертификатруслана3.jpg" class="fitBg" />
+          </div>
+          <div class="content">
+            <h2>Fitness Two<br><span>Fitness name</span></h2>
+          </div>
+        </div>
+        <div class="box">
+          <div class="imgBx">
+            <img src="photo1640468033.jpeg" class="fitBg" />
+          </div>
+          <div class="content">
+            <h2>Fitness Three<br><span>Fitness name</span></h2>
+          </div>
+        </div> -->
+      <!-- </div> -->
+    </section>
+
+<section class="banner2">
+    <div class="containerHoverEffectsCardResponsive">
+      <div class="cardHoverEffectsCardResponsive">
+        <div class="imgBxHoverEffectsCardResponsive">
+          <img src="" >
+          <h2></h2>
+        </div>
+        <div class="contentHoverEffectsCardResponsive">
+          <h2>ЦЕНА</h2>
+          <p>ПОЛНОГО КУРСА<br>
+              350 ₽<br>
+              ВМЕСТО 990 ₽<br><br>
+для приобретения курса, пожалуйста, свяжитесь с нами любым удобным для Вас способом.
+            </p>
+
+        </div>
+      </div>
+    </div>
+</section>
+    <section class="socialMediaSocialMediaIconHoverEffects">
+      <ul class="sciSocialMediaIconHoverEffects">
+        <li data-text="Facebook" data-color="#1877f2">
+          <!--<a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        </li>-->
+        <li data-text="WhatsApp" data-color="#1ab394">
+          <a href="https://api.whatsapp.com/send?phone=+375295220326" class="whatsapp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+        </li>
+        <li data-text="Telegram" data-color="#249ad7">
+          <a href="https://t.me/IanaBondarenko" class="telegram"><i class="fa fa-telegram" aria-hidden="true"></i></a>
+        </li>
+        <li data-text="Instagram" data-color="#e4405f">
+          <a target = "_blank" href="https://instagram.com/figurafint" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        </li>
+      </ul>
+  </section>
+
+    <script>
+
+      VanillaTilt.init(document.querySelectorAll(".sciSocialMediaIconHoverEffects li a"), {
+      		max: 30,
+      		speed: 400,
+          glare: true,
+          "max-glare": 1,
+      	});
+
+      let list = document.querySelectorAll('.sciSocialMediaIconHoverEffects li');
+      let bg = document.querySelector('.socialMediaSocialMediaIconHoverEffects');
+      list.forEach(elements => {
+        elements.addEventListener('mouseenter', function (event) {
+          let color = event.target.getAttribute('data-color');
+          bg.style.backgroundColor = color;
+        })
+        elements.addEventListener('mouseleave', function (event) {
+          bg.style.backgroundColor = 'rgb(255 255 255 / 0%)';
+        })
+      });
+
+    </script>
+
+
+
+    <section class="footer">
+      <h4 class="copyrightText">© 2020 - 2022 Все права сохранены | Интернет - магазин <a href="#">ShopMaster.info</a></h4>
+    </section>
+</body>
+</html>
