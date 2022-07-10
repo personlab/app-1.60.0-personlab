@@ -13,8 +13,8 @@
                   include 'feedBack.php';
                   ?>
                    <a href="https://shopmaster.info/YuriyBaragin_Personal_Portfolio/Profile/" class = "btn2">
-                     <span>Отправить</span>
-                     <span>Отправить</span>
+                     <span>Назад</span>
+                     <span>Назад</span>
                    </a>
            </form>
 </body>

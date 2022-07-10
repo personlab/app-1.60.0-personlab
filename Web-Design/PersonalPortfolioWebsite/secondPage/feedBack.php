@@ -3,11 +3,11 @@
 htmlspecialchars($_SERVER['PHP_SELF']);
 session_start();
 setcookie(time()+160);
-// ob_get_clean();
-/* Задаем переменные */
+
 if ($_POST['submit']) {
 
 } else {
+  /* Задаем переменные */
 $name = htmlspecialchars($_POST["name"]);
 $email = htmlspecialchars($_POST["email"]);
 $header = htmlspecialchars($_POST['header']);
@@ -26,9 +26,6 @@ $mes = "Сообщение с сайта YuriyBaragin_Personal_Portfolio.\n
 Электронный адрес отправителя: $email
 Текст сообщения:
 $message";
-
-
-
 
       if(($_SESSION["rand"] != $captcha) && ($_SESSION["rand"] != "")) {
            //Если капча не передана либо оно является пустой
