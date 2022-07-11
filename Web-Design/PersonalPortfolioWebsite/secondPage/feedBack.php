@@ -27,6 +27,8 @@ $mes = "Сообщение с сайта YuriyBaragin_Personal_Portfolio.\n
 Текст сообщения:
 $message";
 
+ $from  = "From: $name <$email> \r\n Reply-To: $email \r\n";
+
       if(($_SESSION["rand"] != $captcha) && ($_SESSION["rand"] != "")) {
            //Если капча не передана либо оно является пустой
            print_r("<p'><strong><h2>Ошибка!</h2></strong> <h3>Вы ввели неправильную капчу</h3> </p><br><h2>Письмо не отправлено</h2><br>");
@@ -34,12 +36,13 @@ $message";
            Header("Refresh: 5; URL=https://shopmaster.info/YuriyBaragin_Personal_Portfolio/Profile/");
            } else {
              /* Отправляем сообщение, используя mail() функцию */
-             $from  = "From: $name <$email> \r\n Reply-To: $email \r\n";
-             $send = mail($address, $sub, $mes, $from);
+
              if ($send === rtue) {
 
              } else {
-           print_r("<p'><h2>Письмо отправлено<br>Благодарю!</h2></p><h3>С уважением, Юрий</h3>");
+               $send = mail($address, $sub, $mes, $from);
+               print_r("<p'><h2>Письмо отправлено<br>Благодарю!</h2></p><h3>С уважением, Юрий.</h3>");
+               Header("Refresh: 5; URL=https://shopmaster.info/YuriyBaragin_Personal_Portfolio/Profile/");
         }
     }
 }

@@ -174,11 +174,12 @@
                       <div class="capth">
                               <p><img src = "captcha.php" class = "captchas" ></p>
                               <p><input type="text" name="captcha" placeholder="Проверочный код *" required="required"></p>
+                              <button type="submit" name="send" class = "btn2">
+                                <span>Отправить</span>
+                                <span>Отправить</span>
+                              </button>
                       </div>
-                      <button type="submit" name="send" class = "btn2">
-                        <span>Отправить</span>
-                        <span>Отправить</span>
-                      </button>
+
               </form>
              </div>
 

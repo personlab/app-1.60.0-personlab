@@ -21,9 +21,10 @@ body {
 }
 .btn2 {
   position: relative;
-  width: 280px;
+  width: 260px;
   height: 50px;
   margin-top: 50px;
+  margin-left: 5%;
   background: rgb(0 0 0 / 0%);
   border: none;
   border-radius: 4px;
@@ -38,7 +39,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 4px;
+  width: 1px;
   height: 100%;
   background: #ff4020;
   transition: 0.5s ease-in-out;
@@ -49,7 +50,7 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  width: 4px;
+  width: 1px;
   height: 100%;
   background: #ff4020;
   transition: 0.5s ease-in-out;

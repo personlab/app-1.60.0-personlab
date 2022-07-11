@@ -8,7 +8,7 @@
   <title>Result</title>
 </head>
 <body>
-           <form class = 'userForm' method="post" action = "feedBackForm.php">
+           <form class = 'userForm' method="POST" action = "feedBackForm.php">
                <?php
                   include 'feedBack.php';
                   ?>

@@ -16,7 +16,7 @@
        <ul>
          <li><a href="https://shopmaster.info/YuriyBaragin_Personal_Portfolio/Profile/">Обо мне</a></li>
          <li><a href="https://shopmaster.info/YuriyBaragin_Personal_Portfolio/Certificates/">Сертификаты</a></li>
-         <li><a href="#">Портфолио</a></li>
+         <li><a href="https://shopmaster.info/YuriyBaragin_Personal_Portfolio/Portfolio/">Портфолио</a></li>
        </ul>
      </div>
    </div>
@@ -31,9 +31,11 @@
        <img src="me-.jpg" class = "cover">
      </div>
      <div class="content">
-       <h2>Привет, я<br><span>Юрий Барагин</span></h2>
+       <h2>   <?php
+                 include 'time.php';
+                ?> я<br><span>Юрий Барагин</span></h2>
        <p>Synergy Learning System PHP-разработчик.</p>
- <a href="#" class = "btn">Посмотреть мои работы</a>
+ <a href="https://shopmaster.info/YuriyBaragin_Personal_Portfolio/Portfolio/" class = "btn">Посмотреть мои работы</a>
      </div>
      <footer>
        <ul class = "sci">
@@ -81,8 +83,6 @@
          seconds.innerHTML = s;
 
         })
-
-
 
      let menuToggle = document.querySelector('.toggle');
      let navigation = document.querySelector('.navigation');
